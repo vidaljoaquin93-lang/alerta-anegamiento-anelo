@@ -84,7 +84,7 @@ anelo_pueblo,Añelo Pueblo,2026-09-10T09:00,0.0,0.092,17.4,8.8,6.9,False
 anelo_pueblo,Añelo Pueblo,2026-09-10T10:00,0.0,0.092,17.4,10.8,7.3,False
 anelo_pueblo,Añelo Pueblo,2026-09-10T11:00,0.0,0.092,17.4,12.5,9.0,False
 anelo_pueblo,Añelo Pueblo,2026-09-10T12:00,0.0,0.092,17.4,14.3,6.2,False
-anelo_pueblo,Añelo Pueblo,2026-09-10T13:00,0.0,0.092,17.4,15.6,4.2,True
+anelo_pueblo,Añelo Pueblo,2026-09-10T13:00,0.0,0.092,17.4,15.6,4.2,False
 anelo_pueblo,Añelo Pueblo,2026-09-10T14:00,0.0,0.092,17.4,16.6,3.3,True
 anelo_pueblo,Añelo Pueblo,2026-09-10T15:00,0.0,0.092,17.4,17.5,3.1,True
 anelo_pueblo,Añelo Pueblo,2026-09-10T16:00,0.0,0.092,17.4,17.9,5.5,True
@@ -228,7 +228,7 @@ acceso_meseta,Acceso Meseta,2026-09-10T09:00,0.0,0.089,16.8,9.1,7.3,False
 acceso_meseta,Acceso Meseta,2026-09-10T10:00,0.0,0.089,16.8,11.3,6.3,False
 acceso_meseta,Acceso Meseta,2026-09-10T11:00,0.0,0.089,16.8,13.2,6.9,False
 acceso_meseta,Acceso Meseta,2026-09-10T12:00,0.0,0.089,16.8,14.9,3.7,False
-acceso_meseta,Acceso Meseta,2026-09-10T13:00,0.0,0.089,16.8,16.2,2.2,True
+acceso_meseta,Acceso Meseta,2026-09-10T13:00,0.0,0.089,16.8,16.2,2.2,False
 acceso_meseta,Acceso Meseta,2026-09-10T14:00,0.0,0.089,16.8,17.4,2.6,True
 acceso_meseta,Acceso Meseta,2026-09-10T15:00,0.0,0.089,16.8,18.3,3.2,True
 acceso_meseta,Acceso Meseta,2026-09-10T16:00,0.0,0.089,16.8,18.9,2.8,True
@@ -372,7 +372,7 @@ tratayen_sur,Tratayén / Sector Sur,2026-09-10T09:00,0.0,0.108,20.4,8.6,9.4,Fals
 tratayen_sur,Tratayén / Sector Sur,2026-09-10T10:00,0.0,0.108,20.4,10.3,8.7,False
 tratayen_sur,Tratayén / Sector Sur,2026-09-10T11:00,0.0,0.108,20.4,12.0,10.2,False
 tratayen_sur,Tratayén / Sector Sur,2026-09-10T12:00,0.0,0.107,20.2,13.8,10.5,False
-tratayen_sur,Tratayén / Sector Sur,2026-09-10T13:00,0.0,0.107,20.2,15.4,9.3,True
+tratayen_sur,Tratayén / Sector Sur,2026-09-10T13:00,0.0,0.107,20.2,15.4,9.3,False
 tratayen_sur,Tratayén / Sector Sur,2026-09-10T14:00,0.0,0.107,20.2,16.6,9.3,True
 tratayen_sur,Tratayén / Sector Sur,2026-09-10T15:00,0.0,0.106,20.0,17.2,9.5,True
 tratayen_sur,Tratayén / Sector Sur,2026-09-10T16:00,0.0,0.106,20.0,17.5,11.2,True
