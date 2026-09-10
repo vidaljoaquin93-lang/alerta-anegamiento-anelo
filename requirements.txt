@@ -1,0 +1,6 @@
+requests>=2.31.0
+
+# Opcional — solo si se activa la sincronización con Google Sheets
+# (secrets GOOGLE_SHEETS_CREDENTIALS + GOOGLE_SHEETS_ID)
+# gspread>=6.0.0
+# google-auth>=2.28.0

@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "properties": {
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "elevation": {
+      "type": "number"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "utc_offset_seconds": {
+      "type": "integer"
+    },
+    "hourly_units": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "type": "string"
+        },
+        "precipitation": {
+          "type": "string"
+        },
+        "soil_moisture_0_to_7cm": {
+          "type": "string"
+        },
+        "temperature_2m": {
+          "type": "string"
+        },
+        "wind_speed_10m": {
+          "type": "string"
+        }
+      }
+    },
+    "hourly": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "precipitation": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "soil_moisture_0_to_7cm": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "temperature_2m": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "wind_speed_10m": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
