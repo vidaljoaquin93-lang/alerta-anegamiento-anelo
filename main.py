@@ -149,7 +149,7 @@ def ejecutar(dry_run: bool = False) -> Dict[str, Any]:
 
     # ---- 6. Tablero estático --------------------------------------------- #
     try:
-        dashboard.generar(estado, series)
+        dashboard.generar(estado, series, avisos)
     except Exception as exc:  # noqa: BLE001
         log.error("No se pudo generar el tablero HTML: %s", exc)
 
