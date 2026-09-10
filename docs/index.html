@@ -5,347 +5,502 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="1800">
 <meta name="robots" content="noindex, nofollow">
-<title>Alerta de anegamiento — Añelo</title>
-<meta name="description" content="Semáforo de transitabilidad de caminos de greda en Añelo, Vaca Muerta.">
+<meta name="description" content="Estado de transitabilidad de caminos de greda en el corredor Añelo, Vaca Muerta.">
+<title>SATA — Corredor Añelo</title>
 </head>
 <body>
 <style>
 :root{
   color-scheme: light;
-  --surface-1:#fcfcfb; --plane:#f9f9f7;
-  --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
-  --grid:#e1e0d9; --axis:#c3c2b7; --hairline:rgba(11,11,11,.10);
-  --good:#0ca30c; --warning:#fab219; --critical:#d03b3b;
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
-  --chip-verde-bg:rgba(12,163,12,.12); --chip-amarillo-bg:rgba(250,178,25,.18);
-  --chip-rojo-bg:rgba(208,59,59,.14);
+  --inst:#0f3bb3;          /* azul institucional */
+  --inst-oscuro:#071a3d;   /* barra de encabezado */
+  --inst-claro:#e8eefb;
+  --plano:#eef1f5;
+  --panel:#ffffff;
+  --panel-alt:#f7f9fc;
+  --linea:#d3d9e3;
+  --linea-fuerte:#b8c1d1;
+  --tinta:#0d1526;
+  --tinta-2:#48546b;
+  --tinta-3:#7c8798;
+  --ok:#0ca30c;  --ok-txt:#0a7d0a;
+  --warn:#fab219; --warn-txt:#8a5d00;
+  --crit:#d03b3b; --crit-txt:#b02a2a;
+  --serie-1:#2a78d6; --serie-2:#eb6834; --serie-3:#1baf7a;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     color-scheme: dark;
-    --surface-1:#1a1a19; --plane:#0d0d0d;
-    --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
-    --grid:#2c2c2a; --axis:#383835; --hairline:rgba(255,255,255,.10);
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
-    --chip-verde-bg:rgba(12,163,12,.18); --chip-amarillo-bg:rgba(250,178,25,.16);
-    --chip-rojo-bg:rgba(208,59,59,.20);
+    --inst:#5b8cf0; --inst-oscuro:#04101f; --inst-claro:#12233f;
+    --plano:#0b1220; --panel:#111a2b; --panel-alt:#0d1626;
+    --linea:#243248; --linea-fuerte:#33445f;
+    --tinta:#eef2f8; --tinta-2:#a9b6ca; 
+    --tinta-3:#7f8da0;
+    --ok:#0ca30c; --ok-txt:#3fce3f;
+    --warn:#fab219; --warn-txt:#f0b53a;
+    --crit:#d03b3b; --crit-txt:#f07070;
+    --serie-1:#3987e5; --serie-2:#d95926; --serie-3:#199e70;
   }
-}
-:root[data-theme="dark"]{
-  color-scheme: dark;
-  --surface-1:#1a1a19; --plane:#0d0d0d;
-  --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
-  --grid:#2c2c2a; --axis:#383835; --hairline:rgba(255,255,255,.10);
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
-  --chip-verde-bg:rgba(12,163,12,.18); --chip-amarillo-bg:rgba(250,178,25,.16);
-  --chip-rojo-bg:rgba(208,59,59,.20);
 }
 
 *{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 body{
-  margin:0; background:var(--plane); color:var(--ink);
-  font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+  margin:0; background:var(--plano); color:var(--tinta);
+  font:13.5px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1180px; margin:0 auto; padding:28px 20px 64px}
+.num{font-variant-numeric:tabular-nums}
 
-/* ---------- Encabezado ---------- */
-.top{display:flex; flex-wrap:wrap; gap:16px; align-items:flex-end; justify-content:space-between; margin-bottom:6px}
-h1{font-size:20px; font-weight:650; margin:0; letter-spacing:-.01em}
-.sub{color:var(--ink-2); font-size:13px; margin:4px 0 0}
-.stamp{color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; text-align:right}
-
-/* ---------- Hero de estado ---------- */
-.hero{
-  margin:20px 0 26px; padding:20px 22px; border-radius:12px;
-  background:var(--surface-1); border:1px solid var(--hairline);
-  border-left:5px solid var(--nivel-color); display:flex; flex-wrap:wrap;
-  gap:20px; align-items:center; justify-content:space-between;
+/* ══════════ Barra de sistema ══════════ */
+.barra{
+  background:var(--inst-oscuro); color:#fff;
+  border-bottom:3px solid var(--inst);
 }
-.hero-l{display:flex; align-items:center; gap:16px; min-width:0}
-.hero-icon{font-size:26px; line-height:1; color:var(--nivel-color)}
-.hero-k{font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-bottom:2px}
-.hero-v{font-size:28px; font-weight:680; letter-spacing:-.02em; line-height:1.1}
-.hero-accion{color:var(--ink-2); font-size:13.5px; max-width:520px}
-
-/* ---------- Tarjetas por punto ---------- */
-.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; margin-bottom:30px}
-.card{background:var(--surface-1); border:1px solid var(--hairline); border-radius:10px; padding:16px 17px}
-.card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:2px}
-.card-n{font-size:15px; font-weight:620; letter-spacing:-.01em}
-.card-d{font-size:12px; color:var(--muted); margin-bottom:14px}
-.chip{
-  display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:999px;
-  font-size:11px; font-weight:660; letter-spacing:.05em; white-space:nowrap;
+.barra-in{
+  max-width:1320px; margin:0 auto; padding:11px 22px;
+  display:flex; flex-wrap:wrap; gap:14px 20px; align-items:center;
+  justify-content:space-between;
 }
-.chip-verde{background:var(--chip-verde-bg); color:var(--good)}
-.chip-amarillo{background:var(--chip-amarillo-bg); color:#8a5d00}
-:root:not([data-theme="light"]) .chip-amarillo{color:var(--warning)}
-@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .chip-amarillo{color:#8a5d00}}
-:root[data-theme="dark"] .chip-amarillo{color:var(--warning)}
-.chip-rojo{background:var(--chip-rojo-bg); color:var(--critical)}
-
-.iie-row{display:flex; align-items:baseline; gap:8px; margin-bottom:10px}
-.iie-v{font-size:30px; font-weight:680; letter-spacing:-.02em; line-height:1}
-.iie-l{font-size:11px; color:var(--muted); letter-spacing:.06em; text-transform:uppercase}
-.meter{height:6px; border-radius:3px; background:var(--grid); overflow:hidden; margin-bottom:14px}
-.meter i{display:block; height:100%; border-radius:3px; background:var(--nivel-color)}
-
-.kv{display:grid; grid-template-columns:1fr auto; gap:5px 12px; font-size:12.5px; padding-top:12px; border-top:1px solid var(--hairline)}
-.kv dt{color:var(--ink-2)}
-.kv dd{margin:0; font-variant-numeric:tabular-nums; font-weight:560; text-align:right}
-.trig{margin:12px 0 0; padding:0; list-style:none; font-size:12px; color:var(--ink-2)}
-.trig li{padding-left:13px; position:relative; margin-bottom:3px}
-.trig li::before{content:"·"; position:absolute; left:4px; color:var(--muted)}
-
-.outlook{
-  display:flex; gap:9px; align-items:flex-start; margin-top:13px; padding:9px 11px;
-  border-radius:8px; border:1px dashed var(--nivel-color); font-size:12px;
-  color:var(--ink-2); line-height:1.45;
+.marca{display:flex; align-items:center; gap:13px; min-width:0}
+.sigla{
+  background:var(--inst); color:#fff; font-weight:700; font-size:14px;
+  letter-spacing:.10em; padding:6px 11px; border-radius:3px; flex-shrink:0;
 }
-.outlook span{color:var(--nivel-color); font-size:13px; line-height:1.35}
-.outlook strong{color:var(--ink); font-weight:640}
-
-.hero-out{
-  width:100%; margin-top:4px; padding:11px 14px; border-radius:8px;
-  border:1px dashed var(--pron-color); font-size:13px; color:var(--ink-2);
-  display:flex; gap:9px; align-items:center;
+.marca-txt{min-width:0}
+.marca-t{font-size:14px; font-weight:600; letter-spacing:.01em; line-height:1.25}
+.marca-s{font-size:11.5px; color:#9db0d0; letter-spacing:.04em; margin-top:2px}
+.meta{
+  display:flex; gap:26px; font-size:11.5px; text-align:right;
+  font-variant-numeric:tabular-nums;
 }
-.hero-out b{color:var(--ink); font-weight:640}
-.hero-out span{color:var(--pron-color); font-size:15px}
+.meta-k{color:#8fa3c4; text-transform:uppercase; letter-spacing:.09em; font-size:10px}
+.meta-v{color:#fff; margin-top:3px; font-weight:600}
+.meta-v.alarma{color:#ff9c9c}
 
-/* ---------- Gráficos ---------- */
-.chart-card{background:var(--surface-1); border:1px solid var(--hairline); border-radius:10px; padding:18px 18px 12px; margin-bottom:14px}
-.chart-h{margin-bottom:2px; font-size:14.5px; font-weight:620}
-.chart-s{font-size:12px; color:var(--ink-2); margin-bottom:14px}
-.legend{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:12px; font-size:12px; color:var(--ink-2)}
-.legend span{display:inline-flex; align-items:center; gap:6px}
-.swatch{width:14px; height:2.5px; border-radius:2px; display:inline-block}
-.chart-scroll{overflow-x:auto}
-svg{display:block; width:100%; height:auto}
-.tip{
-  position:fixed; pointer-events:none; z-index:20; opacity:0; transition:opacity .1s;
-  background:var(--surface-1); border:1px solid var(--hairline); border-radius:8px;
-  padding:9px 11px; font-size:12px; box-shadow:0 6px 20px rgba(0,0,0,.14); min-width:170px;
-}
-.tip b{display:block; font-size:11.5px; color:var(--ink-2); font-weight:560; margin-bottom:6px}
-.tip .r{display:flex; align-items:center; gap:7px; justify-content:space-between; margin-top:3px}
-.tip .r em{font-style:normal; color:var(--ink-2); display:flex; align-items:center; gap:6px}
-.tip .r strong{font-variant-numeric:tabular-nums; font-weight:620}
-
-/* ---------- Tabla ---------- */
-details{background:var(--surface-1); border:1px solid var(--hairline); border-radius:10px; padding:14px 18px; margin-bottom:14px}
-summary{cursor:pointer; font-size:13.5px; font-weight:600}
-table{width:100%; border-collapse:collapse; margin-top:14px; font-size:12.5px}
-th,td{text-align:right; padding:7px 8px; border-bottom:1px solid var(--hairline); font-variant-numeric:tabular-nums}
-th:first-child,td:first-child{text-align:left; font-variant-numeric:normal}
-th{color:var(--muted); font-weight:560; font-size:11px; letter-spacing:.05em; text-transform:uppercase}
-
-/* ---------- Alertas SMN ---------- */
-.alerta{border-left:3px solid var(--warning); padding:10px 14px; margin-bottom:9px; background:var(--surface-1); border-radius:0 8px 8px 0; border-top:1px solid var(--hairline); border-right:1px solid var(--hairline); border-bottom:1px solid var(--hairline)}
-.alerta.naranja{border-left-color:#ec835a}
-.alerta.rojo{border-left-color:var(--critical)}
-.alerta h4{margin:0 0 3px; font-size:13px; font-weight:620}
-.alerta p{margin:0; font-size:12.5px; color:var(--ink-2)}
-.alerta .meta{font-size:11.5px; color:var(--muted); margin-top:5px; font-variant-numeric:tabular-nums}
+/* ══════════ Contenedor ══════════ */
+.wrap{max-width:1320px; margin:0 auto; padding:20px 22px 56px}
 
 .stale{
-  background:var(--chip-rojo-bg); border:1px solid var(--critical); color:var(--ink);
-  border-radius:8px; padding:12px 15px; margin-bottom:18px; font-size:13px; line-height:1.5;
+  background:var(--crit); color:#fff; padding:11px 16px; margin-bottom:18px;
+  border-radius:3px; font-size:13px; line-height:1.5;
 }
-h2{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:32px 0 12px}
-footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--hairline); font-size:11.5px; color:var(--muted); line-height:1.7}
-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; background:var(--grid); padding:1px 5px; border-radius:4px}
-@media(max-width:640px){ .wrap{padding:18px 14px 48px} .hero-v{font-size:24px} h1{font-size:17px} }
-</style>
-<div class="wrap">
-  <div class="stale" id="banner-stale" hidden>
-    <strong>Atención:</strong> estos datos tienen más de 3 horas. La actualización
-    automática puede haberse interrumpido — verificar antes de tomar una decisión
-    operativa con esta información.
-  </div>
-  <div class="top">
-    <div>
-      <h1>Alerta temprana de anegamiento de caminos</h1>
-      <p class="sub">Añelo — Vaca Muerta, Neuquén · caminos de greda y ripio</p>
-    </div>
-    <div class="stamp">
-      Actualizado<br>2026-09-10 10:22:18 (ART)<br>
-      <span id="frescura" data-ts="2026-09-10T10:22:18">Próxima corrida en ≤ 2 h</span>
-    </div>
-  </div>
+.stale b{font-weight:700}
 
-  <section class="hero" style="--nivel-color:var(--warning)">
-    <div class="hero-l">
-      <span class="hero-icon" aria-hidden="true">▲</span>
-      <div>
-        <div class="hero-k">Estado del corredor</div>
-        <div class="hero-v" style="color:var(--warning)">AMARILLO</div>
+/* ══════════ Banda de estado ══════════ */
+.estado{
+  background:var(--panel); border:1px solid var(--linea);
+  border-left:7px solid var(--nivel); border-radius:3px; margin-bottom:22px;
+}
+.estado-fila{
+  display:flex; flex-wrap:wrap; gap:18px 30px; align-items:center;
+  padding:17px 22px;
+}
+.estado-bloque{display:flex; align-items:center; gap:15px; flex-shrink:0}
+.estado-ico{font-size:29px; line-height:1; color:var(--nivel)}
+.rotulo{
+  font-size:10px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--tinta-3); font-weight:600;
+}
+.estado-nivel{
+  font-size:27px; font-weight:700; letter-spacing:.01em; line-height:1.1;
+  color:var(--nivel); margin-top:3px;
+}
+.estado-accion{font-size:14px; color:var(--tinta); line-height:1.45; flex:1; min-width:260px}
+.estado-pie{
+  border-top:1px solid var(--linea); padding:11px 22px; font-size:12.5px;
+  color:var(--tinta-2); display:flex; gap:10px; align-items:baseline;
+  background:var(--panel-alt);
+}
+.estado-pie b{color:var(--tinta); font-weight:650}
+.estado-pie .pico{color:var(--pron); font-weight:700}
+
+/* ══════════ Secciones ══════════ */
+.sec{
+  display:flex; align-items:baseline; gap:12px; margin:26px 0 10px;
+  border-bottom:2px solid var(--linea-fuerte); padding-bottom:7px;
+}
+.sec h2{
+  font-size:12px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--inst); font-weight:700; margin:0;
+}
+.sec span{font-size:11.5px; color:var(--tinta-3)}
+
+/* ══════════ Tabla de puntos ══════════ */
+.tabla-caja{
+  background:var(--panel); border:1px solid var(--linea); border-radius:3px;
+  overflow-x:auto;
+}
+table.datos{width:100%; border-collapse:collapse; font-size:13px; min-width:860px}
+table.datos thead th{
+  background:var(--panel-alt); color:var(--tinta-3); font-weight:600;
+  font-size:10px; letter-spacing:.09em; text-transform:uppercase;
+  padding:9px 12px; text-align:right; border-bottom:2px solid var(--linea-fuerte);
+  white-space:nowrap;
+}
+table.datos thead th.izq{text-align:left}
+table.datos tbody td{
+  padding:11px 12px; text-align:right; border-bottom:1px solid var(--linea);
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+table.datos tbody td.izq{text-align:left; font-variant-numeric:normal}
+table.datos tbody tr:last-child td{border-bottom:none}
+table.datos tbody tr:hover td{background:var(--panel-alt)}
+.cod{
+  font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:12px;
+  color:var(--tinta-2); font-weight:600;
+}
+.pnombre{font-weight:600; color:var(--tinta)}
+.pdesc{font-size:11.5px; color:var(--tinta-3); margin-top:2px; font-weight:400}
+.badge{
+  display:inline-flex; align-items:center; gap:6px; padding:3px 9px;
+  border-radius:3px; font-size:11px; font-weight:700; letter-spacing:.06em;
+  border:1px solid currentColor; white-space:nowrap;
+}
+.b-verde{color:var(--ok-txt)}
+.b-amarillo{color:var(--warn-txt)}
+.b-rojo{color:var(--crit-txt)}
+.iie-cel{font-size:17px; font-weight:700}
+.barrita{
+  height:4px; background:var(--linea); border-radius:2px; margin-top:5px;
+  width:64px; margin-left:auto; overflow:hidden;
+}
+.barrita i{display:block; height:100%; background:var(--nivel)}
+.motivo{
+  font-size:11.5px; color:var(--tinta-2); text-align:left !important;
+  white-space:normal !important; max-width:270px; line-height:1.4;
+}
+.sub{color:var(--tinta-3); font-size:11px}
+
+/* ══════════ Gráficos ══════════ */
+.panel{
+  background:var(--panel); border:1px solid var(--linea); border-radius:3px;
+  padding:16px 18px 10px; margin-bottom:14px;
+}
+.panel-t{font-size:13.5px; font-weight:650; margin-bottom:3px}
+.panel-s{font-size:11.5px; color:var(--tinta-2); margin-bottom:13px; line-height:1.45}
+.leyenda{display:flex; flex-wrap:wrap; gap:16px; margin-bottom:11px; font-size:11.5px; color:var(--tinta-2)}
+.leyenda span{display:inline-flex; align-items:center; gap:7px}
+.sw{width:15px; height:3px; border-radius:2px; display:inline-block}
+svg{display:block; width:100%; height:auto}
+.scroll-x{overflow-x:auto}
+.tip{
+  position:fixed; pointer-events:none; z-index:30; opacity:0; transition:opacity .1s;
+  background:var(--panel); border:1px solid var(--linea-fuerte); border-radius:3px;
+  padding:9px 11px; font-size:12px; box-shadow:0 4px 16px rgba(7,26,61,.18); min-width:180px;
+}
+.tip b{display:block; font-size:11px; color:var(--tinta-3); font-weight:600;
+  margin-bottom:6px; text-transform:uppercase; letter-spacing:.06em}
+.tip .r{display:flex; align-items:center; gap:9px; justify-content:space-between; margin-top:3px}
+.tip .r em{font-style:normal; color:var(--tinta-2); display:flex; align-items:center; gap:7px}
+.tip .r strong{font-variant-numeric:tabular-nums; font-weight:700}
+
+/* ══════════ Avisos SMN ══════════ */
+.aviso{
+  background:var(--panel); border:1px solid var(--linea);
+  border-left:4px solid var(--warn); border-radius:3px;
+  padding:12px 16px; margin-bottom:9px;
+}
+.aviso.naranja{border-left-color:#ec835a}
+.aviso.rojo{border-left-color:var(--crit)}
+.aviso.ninguno{border-left-color:var(--ok)}
+.aviso-t{
+  font-size:12.5px; font-weight:700; margin-bottom:5px; display:flex;
+  flex-wrap:wrap; gap:10px; align-items:baseline;
+}
+.aviso-t .org{
+  font-family:ui-monospace,Consolas,monospace; font-size:10.5px; color:var(--tinta-3);
+  font-weight:600; letter-spacing:.05em;
+}
+.aviso p{margin:0; font-size:12.5px; color:var(--tinta-2); line-height:1.5}
+.aviso-meta{
+  font-size:11px; color:var(--tinta-3); margin-top:7px;
+  font-variant-numeric:tabular-nums; display:flex; flex-wrap:wrap; gap:16px;
+}
+
+/* ══════════ Matriz de referencia ══════════ */
+.matriz{width:100%; border-collapse:collapse; font-size:12px}
+.matriz th{
+  background:var(--panel-alt); font-size:10px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--tinta-3); font-weight:600;
+  padding:8px 12px; text-align:left; border-bottom:2px solid var(--linea-fuerte);
+}
+.matriz td{padding:9px 12px; border-bottom:1px solid var(--linea); vertical-align:top}
+.matriz tr:last-child td{border-bottom:none}
+.matriz td:first-child{white-space:nowrap; font-weight:700}
+
+/* ══════════ Pie técnico ══════════ */
+.pie{
+  margin-top:30px; border-top:2px solid var(--linea-fuerte); padding-top:16px;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px 34px;
+  font-size:11.5px; color:var(--tinta-2); line-height:1.65;
+}
+.pie h3{
+  font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--tinta-3); font-weight:700; margin:0 0 7px;
+}
+.pie code{
+  font-family:ui-monospace,Consolas,monospace; font-size:11px;
+  background:var(--inst-claro); color:var(--inst); padding:1px 5px; border-radius:2px;
+}
+.pie dl{display:grid; grid-template-columns:auto 1fr; gap:3px 12px; margin:0}
+.pie dt{color:var(--tinta-3)}
+.pie dd{margin:0; font-variant-numeric:tabular-nums}
+
+@media(max-width:720px){
+  .wrap{padding:14px 13px 40px}
+  .barra-in{padding:10px 13px}
+  .meta{gap:18px}
+  .estado-nivel{font-size:23px}
+  .estado-fila{padding:14px 16px}
+}
+</style>
+
+<header class="barra">
+  <div class="barra-in">
+    <div class="marca">
+      <div class="sigla">SATA</div>
+      <div class="marca-txt">
+        <div class="marca-t">Sistema de Alerta Temprana de Anegamiento</div>
+        <div class="marca-s">Corredor Añelo · Vaca Muerta, Neuquén — caminos de greda y ripio</div>
       </div>
     </div>
-    <p class="hero-accion">Barro en greda. Circular solo con 4x4. Evitar equipos pesados sin escolta.</p>
-    <div class="hero-out" style="--pron-color:var(--good)"><span aria-hidden="true">●</span><div>Perspectiva 72 h: <b>sin deterioro previsto</b>. Ningún punto supera los umbrales con el pronóstico vigente.</div></div>
+    <div class="meta">
+      <div>
+        <div class="meta-k">Última corrida</div>
+        <div class="meta-v">2026-09-10 10:27:33</div>
+      </div>
+      <div>
+        <div class="meta-k">Antigüedad</div>
+        <div class="meta-v" id="frescura" data-ts="2026-09-10T10:27:33">—</div>
+      </div>
+      <div>
+        <div class="meta-k">Ciclo</div>
+        <div class="meta-v">2 h</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stale" id="banner-stale" hidden>
+    <b>Dato desactualizado.</b> Esta información tiene más de 3 horas: la
+    actualización automática puede haberse interrumpido. Verificar el estado real
+    antes de tomar una decisión operativa.
+  </div>
+
+  <section class="estado" style="--nivel:var(--warn)">
+    <div class="estado-fila">
+      <div class="estado-bloque">
+        <span class="estado-ico" aria-hidden="true">▲</span>
+        <div>
+          <div class="rotulo">Estado del corredor</div>
+          <div class="estado-nivel">AMARILLO</div>
+        </div>
+      </div>
+      <div class="estado-accion">Barro en greda. Circular solo con 4x4. Evitar equipos pesados sin escolta.</div>
+    </div>
+    <div class="estado-pie" style="--pron:var(--ok)"><span class="rotulo">Perspectiva 72 h</span><span><b>Sin deterioro previsto.</b> Ningún punto supera los umbrales con el pronóstico vigente.</span></div>
   </section>
 
-  <h2>Puntos críticos</h2>
-  <div class="grid">
-<article class="card" style="--nivel-color:var(--warning)">
-  <div class="card-top">
-    <div>
-      <div class="card-n">Añelo Pueblo</div>
-      <div class="card-d">-38.353, -68.783</div>
-    </div>
-    <span class="chip chip-amarillo">▲ AMARILLO</span>
+  <div class="sec">
+    <h2>Puntos de control</h2>
+    <span>3 puntos monitoreados · IIE sobre 100</span>
   </div>
-  <div class="iie-row"><span class="iie-v">50</span><span class="iie-l">IIE / 100</span></div>
-  <div class="meter"><i style="width:50.0%"></i></div>
-  <dl class="kv">
-    <dt>Lluvia de referencia</dt><dd>1.2 mm</dd>
-    <dt>Acumulado 24 h</dt><dd>0.1 mm</dd>
-    <dt>Pronóstico 24 h</dt><dd>1.2 mm</dd>
-    <dt>Pronóstico 72 h</dt><dd>2.8 mm</dd>
-    <dt>Saturación de suelo</dt><dd>17 %</dd>
-    <dt>Alerta SMN</dt><dd>AMARILLO</dd>
-  </dl>
-  <ul class="trig"><li>Alerta SMN AMARILLA vigente sobre el punto</li></ul>
-  
-</article>
-<article class="card" style="--nivel-color:var(--warning)">
-  <div class="card-top">
-    <div>
-      <div class="card-n">Acceso Meseta</div>
-      <div class="card-d">-38.3, -68.85</div>
-    </div>
-    <span class="chip chip-amarillo">▲ AMARILLO</span>
-  </div>
-  <div class="iie-row"><span class="iie-v">50</span><span class="iie-l">IIE / 100</span></div>
-  <div class="meter"><i style="width:50.0%"></i></div>
-  <dl class="kv">
-    <dt>Lluvia de referencia</dt><dd>0.8 mm</dd>
-    <dt>Acumulado 24 h</dt><dd>0.0 mm</dd>
-    <dt>Pronóstico 24 h</dt><dd>0.8 mm</dd>
-    <dt>Pronóstico 72 h</dt><dd>1.7 mm</dd>
-    <dt>Saturación de suelo</dt><dd>17 %</dd>
-    <dt>Alerta SMN</dt><dd>AMARILLO</dd>
-  </dl>
-  <ul class="trig"><li>Alerta SMN AMARILLA vigente sobre el punto</li></ul>
-  
-</article>
-<article class="card" style="--nivel-color:var(--warning)">
-  <div class="card-top">
-    <div>
-      <div class="card-n">Tratayén / Sector Sur</div>
-      <div class="card-d">-38.483, -68.5</div>
-    </div>
-    <span class="chip chip-amarillo">▲ AMARILLO</span>
-  </div>
-  <div class="iie-row"><span class="iie-v">50</span><span class="iie-l">IIE / 100</span></div>
-  <div class="meter"><i style="width:50.0%"></i></div>
-  <dl class="kv">
-    <dt>Lluvia de referencia</dt><dd>0.6 mm</dd>
-    <dt>Acumulado 24 h</dt><dd>0.0 mm</dd>
-    <dt>Pronóstico 24 h</dt><dd>0.6 mm</dd>
-    <dt>Pronóstico 72 h</dt><dd>1.5 mm</dd>
-    <dt>Saturación de suelo</dt><dd>20 %</dd>
-    <dt>Alerta SMN</dt><dd>AMARILLO</dd>
-  </dl>
-  <ul class="trig"><li>Alerta SMN AMARILLA vigente sobre el punto</li></ul>
-  
-</article></div>
-
-  <h2>Evolución 72 h atrás / 72 h adelante</h2>
-
-  <div class="chart-card">
-    <div class="chart-h">Precipitación acumulada móvil de 24 h</div>
-    <div class="chart-s">Milímetros caídos en las 24 h previas a cada hora. Las líneas
-      punteadas marcan los umbrales de la matriz de riesgo; el tramo con guiones es pronóstico.</div>
-    <div class="legend"><span><i class="swatch" style="background:#2a78d6"></i>Añelo Pueblo</span><span><i class="swatch" style="background:#eb6834"></i>Acceso Meseta</span><span><i class="swatch" style="background:#1baf7a"></i>Tratayén / Sector Sur</span></div>
-    <div class="chart-scroll"><div id="g-precip"></div></div>
-  </div>
-
-  <div class="chart-card">
-    <div class="chart-h">Saturación de humedad del suelo (0-7 cm)</div>
-    <div class="chart-s">Porcentaje de saturación sobre porosidad total
-      (0.53 m³/m³). Es la variable que gobierna el barro en greda
-      cuando la lluvia ya pasó.</div>
-    <div class="legend"><span><i class="swatch" style="background:#2a78d6"></i>Añelo Pueblo</span><span><i class="swatch" style="background:#eb6834"></i>Acceso Meseta</span><span><i class="swatch" style="background:#1baf7a"></i>Tratayén / Sector Sur</span></div>
-    <div class="chart-scroll"><div id="g-suelo"></div></div>
-  </div>
-
-  <details>
-    <summary>Ver datos en tabla</summary>
-    <div class="chart-scroll"><table>
-      <thead><tr>
-        <th>Punto</th><th>Nivel</th><th>IIE</th><th>Ac. 24 h (mm)</th>
-        <th>Pron. 24 h (mm)</th><th>Pron. 72 h (mm)</th>
-        <th>Suelo (m³/m³)</th><th>Saturación (%)</th>
-      </tr></thead>
+  <div class="tabla-caja">
+    <table class="datos">
+      <thead>
+        <tr>
+          <th class="izq">Cód.</th>
+          <th class="izq">Punto</th>
+          <th>Estado</th>
+          <th>IIE</th>
+          <th>Lluvia 24 h<br><span style="font-weight:400">mm obs.</span></th>
+          <th>Pron. 24 h<br><span style="font-weight:400">mm</span></th>
+          <th>Pron. 72 h<br><span style="font-weight:400">mm</span></th>
+          <th>Suelo<br><span style="font-weight:400">% sat.</span></th>
+          <th>Aviso SMN</th>
+          <th>Proyección 72 h</th>
+          <th class="izq">Disparadores</th>
+        </tr>
+      </thead>
       <tbody><tr>
-  <td>Añelo Pueblo</td>
-  <td>▲ AMARILLO</td>
-  <td>50</td>
+  <td class="izq"><span class="cod">AÑ-01</span></td>
+  <td class="izq">
+    <div class="pnombre">Añelo Pueblo</div>
+    <div class="pdesc">Base operativa</div>
+  </td>
+  <td><span class="badge b-amarillo">▲ AMARILLO</span></td>
+  <td style="--nivel:var(--warn)">
+    <div class="iie-cel">50</div>
+    <div class="barrita"><i style="width:50.0%"></i></div>
+  </td>
   <td>0.1</td>
   <td>1.2</td>
   <td>2.8</td>
-  <td>0.092</td>
-  <td>17</td>
+  <td>17<div class="sub">0.092 m³/m³</div></td>
+  <td><span class="badge b-amarillo">AMARILLO</span></td>
+  <td><span class="sub">sin cambio</span></td>
+  <td class="motivo">Alerta SMN AMARILLA vigente sobre el punto</td>
 </tr><tr>
-  <td>Acceso Meseta</td>
-  <td>▲ AMARILLO</td>
-  <td>50</td>
+  <td class="izq"><span class="cod">AM-02</span></td>
+  <td class="izq">
+    <div class="pnombre">Acceso Meseta</div>
+    <div class="pdesc">Ruta Prov. 17 / Bajada del Chañar</div>
+  </td>
+  <td><span class="badge b-amarillo">▲ AMARILLO</span></td>
+  <td style="--nivel:var(--warn)">
+    <div class="iie-cel">50</div>
+    <div class="barrita"><i style="width:50.0%"></i></div>
+  </td>
   <td>0.0</td>
   <td>0.8</td>
   <td>1.7</td>
-  <td>0.089</td>
-  <td>17</td>
+  <td>17<div class="sub">0.089 m³/m³</div></td>
+  <td><span class="badge b-amarillo">AMARILLO</span></td>
+  <td><span class="sub">sin cambio</span></td>
+  <td class="motivo">Alerta SMN AMARILLA vigente sobre el punto</td>
 </tr><tr>
-  <td>Tratayén / Sector Sur</td>
-  <td>▲ AMARILLO</td>
-  <td>50</td>
+  <td class="izq"><span class="cod">TR-03</span></td>
+  <td class="izq">
+    <div class="pnombre">Tratayén / Sector Sur</div>
+    <div class="pdesc">Acceso sur a yacimiento</div>
+  </td>
+  <td><span class="badge b-amarillo">▲ AMARILLO</span></td>
+  <td style="--nivel:var(--warn)">
+    <div class="iie-cel">50</div>
+    <div class="barrita"><i style="width:50.0%"></i></div>
+  </td>
   <td>0.0</td>
   <td>0.6</td>
   <td>1.5</td>
-  <td>0.108</td>
-  <td>20</td>
+  <td>20<div class="sub">0.108 m³/m³</div></td>
+  <td><span class="badge b-amarillo">AMARILLO</span></td>
+  <td><span class="sub">sin cambio</span></td>
+  <td class="motivo">Alerta SMN AMARILLA vigente sobre el punto</td>
 </tr></tbody>
-    </table></div>
-  </details>
+    </table>
+  </div>
 
-  <h2>Alertas oficiales SMN sobre los puntos</h2>
+  <div class="sec">
+    <h2>Evolución</h2>
+    <span>72 h observadas · 72 h pronosticadas</span>
+  </div>
+
+  <div class="panel">
+    <div class="panel-t">Precipitación acumulada móvil de 24 h</div>
+    <div class="panel-s">Milímetros caídos en las 24 h previas a cada hora. Las líneas
+      cortadas marcan los umbrales de la matriz; el tramo con guiones es pronóstico.</div>
+    <div class="leyenda"><span><i class="sw" style="background:#2a78d6"></i><b class="cod">AÑ-01</b> Añelo Pueblo</span><span><i class="sw" style="background:#eb6834"></i><b class="cod">AM-02</b> Acceso Meseta</span><span><i class="sw" style="background:#1baf7a"></i><b class="cod">TR-03</b> Tratayén / Sector Sur</span></div>
+    <div class="scroll-x"><div id="g-precip"></div></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-t">Saturación de humedad del suelo (0-7 cm)</div>
+    <div class="panel-s">Porcentaje de saturación sobre porosidad total
+      (0.53 m³/m³). Es la variable que gobierna el barro en greda
+      cuando la lluvia ya pasó.</div>
+    <div class="leyenda"><span><i class="sw" style="background:#2a78d6"></i><b class="cod">AÑ-01</b> Añelo Pueblo</span><span><i class="sw" style="background:#eb6834"></i><b class="cod">AM-02</b> Acceso Meseta</span><span><i class="sw" style="background:#1baf7a"></i><b class="cod">TR-03</b> Tratayén / Sector Sur</span></div>
+    <div class="scroll-x"><div id="g-suelo"></div></div>
+  </div>
+
+  <div class="sec">
+    <h2>Avisos oficiales SMN</h2>
+    <span>1 vigente(s) sobre los puntos · 102 en el país</span>
+  </div>
   
-<div class="alerta amarillo">
-  <h4>Lluvias — SMN AMARILLO</h4>
+<div class="aviso amarillo">
+  <div class="aviso-t">
+    <span>Lluvias</span>
+    <span class="org">SMN · NIVEL AMARILLO · CAP Moderate</span>
+  </div>
   <p>El área será afectada por lluvias de variada intensidad. Se prevén valores de precipitación acumulada entre 10 y  20 mm, pudiendo ser superados de manera local.</p>
-  <div class="meta">Vigencia: 2026-09-11T09:00:00-03:00 → 2026-09-11T14:59:59-03:00 · severidad CAP Moderate · certeza Likely</div>
+  <div class="aviso-meta">
+    <span>Vigencia 11/09 09:00 → 11/09 14:00</span>
+    <span>Certeza Likely</span>
+    <span>Urgencia Future</span>
+  </div>
 </div>
 
-  <footer>
-    <strong>Matriz de riesgo.</strong>
-    Verde: lluvia &lt; 3 mm y saturación &lt; 60 %.
-    Amarillo: lluvia 3-7 mm o saturación 60-75 %.
-    Rojo: lluvia &gt; 7 mm, saturación &gt; 75 % o alerta SMN naranja/roja vigente.<br>
-    <strong>Lluvia de referencia:</strong> máximo entre el acumulado de las últimas 24 h y el pronóstico de las próximas 24 h.<br>
-    <strong>Fuentes:</strong> Open-Meteo (variables horarias, sin API key) ·
-    Servicio Meteorológico Nacional, feed CAP oficial <code>ssl.smn.gob.ar/CAP/AR.php</code>.
-    101 avisos vigentes en el país al momento de la corrida.<br>
-    Actualización automática cada 2 h vía GitHub Actions. Infraestructura de costo cero.
-  </footer>
+  <div class="sec">
+    <h2>Matriz de decisión</h2>
+    <span>Regla vigente del sistema</span>
+  </div>
+  <div class="tabla-caja">
+    <table class="matriz">
+      <thead>
+        <tr><th>Nivel</th><th>Condición</th><th>Acción operativa</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:var(--ok-txt)">● VERDE</td>
+          <td>Lluvia &lt; 3 mm <b>y</b> saturación &lt; 60 %</td>
+          <td>Transitabilidad normal. Sin restricciones.</td>
+        </tr>
+        <tr>
+          <td style="color:var(--warn-txt)">▲ AMARILLO</td>
+          <td>Lluvia 3-7 mm <b>o</b> saturación 60-75 % <b>o</b> aviso SMN amarillo</td>
+          <td>Barro en greda. Circular solo con 4x4. Evitar equipos pesados sin escolta.</td>
+        </tr>
+        <tr>
+          <td style="color:var(--crit-txt)">■ ROJO</td>
+          <td>Lluvia &gt; 7 mm <b>o</b> saturación &gt; 75 % <b>o</b> aviso SMN naranja/rojo</td>
+          <td>Anegamiento inminente / cortes de picadas. Suspender movimientos no críticos.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pie">
+    <div>
+      <h3>Origen de los datos</h3>
+      Variables horarias: <code>api.open-meteo.com</code><br>
+      Avisos oficiales: <code>ssl.smn.gob.ar/CAP/AR.php</code><br>
+      Feed CAP (Common Alerting Protocol, OASIS/OMM), con verificación
+      punto-en-polígono contra las coordenadas de cada punto de control.
+    </div>
+    <div>
+      <h3>Criterios de cálculo</h3>
+      <dl>
+        <dt>Lluvia de referencia</dt><dd>máx(obs. 24 h, pron. 24 h)</dd>
+        <dt>Porosidad de suelo</dt><dd>0.53 m³/m³</dd>
+        <dt>Umbral amarillo</dt><dd>0.318 m³/m³</dd>
+        <dt>Umbral rojo</dt><dd>0.398 m³/m³</dd>
+        <dt>Buffer de aviso</dt><dd>0.02° (~2 km)</dd>
+      </dl>
+    </div>
+    <div>
+      <h3>Operación del sistema</h3>
+      <dl>
+        <dt>Versión</dt><dd>1.0</dd>
+        <dt>Ciclo de corrida</dt><dd>cada 2 h</dd>
+        <dt>Recarga de página</dt><dd>cada 30 min</dd>
+        <dt>Alerta de dato viejo</dt><dd>&gt; 3 h</dd>
+        <dt>Puntos con error</dt><dd>ninguno</dd>
+      </dl>
+    </div>
+    <div>
+      <h3>Alcance</h3>
+      Sistema de apoyo a la decisión operativa. La resolución de los modelos
+      meteorológicos es de aproximadamente 9 km: sirve para decidir a nivel
+      corredor, no para un tramo puntual. El criterio del responsable de
+      operaciones prevalece sobre el semáforo.
+    </div>
+  </div>
 </div>
 <div class="tip" id="tip" role="status" aria-live="polite"></div>
-<script>window.__DATOS__ = {"series": [{"id": "anelo_pueblo", "nombre": "Añelo Pueblo", "color": "#2a78d6", "colorDark": "#3987e5", "horas": ["2026-09-07T00:00", "2026-09-07T01:00", "2026-09-07T02:00", "2026-09-07T03:00", "2026-09-07T04:00", "2026-09-07T05:00", "2026-09-07T06:00", "2026-09-07T07:00", "2026-09-07T08:00", "2026-09-07T09:00", "2026-09-07T10:00", "2026-09-07T11:00", "2026-09-07T12:00", "2026-09-07T13:00", "2026-09-07T14:00", "2026-09-07T15:00", "2026-09-07T16:00", "2026-09-07T17:00", "2026-09-07T18:00", "2026-09-07T19:00", "2026-09-07T20:00", "2026-09-07T21:00", "2026-09-07T22:00", "2026-09-07T23:00", "2026-09-08T00:00", "2026-09-08T01:00", "2026-09-08T02:00", "2026-09-08T03:00", "2026-09-08T04:00", "2026-09-08T05:00", "2026-09-08T06:00", "2026-09-08T07:00", "2026-09-08T08:00", "2026-09-08T09:00", "2026-09-08T10:00", "2026-09-08T11:00", "2026-09-08T12:00", "2026-09-08T13:00", "2026-09-08T14:00", "2026-09-08T15:00", "2026-09-08T16:00", "2026-09-08T17:00", "2026-09-08T18:00", "2026-09-08T19:00", "2026-09-08T20:00", "2026-09-08T21:00", "2026-09-08T22:00", "2026-09-08T23:00", "2026-09-09T00:00", "2026-09-09T01:00", "2026-09-09T02:00", "2026-09-09T03:00", "2026-09-09T04:00", "2026-09-09T05:00", "2026-09-09T06:00", "2026-09-09T07:00", "2026-09-09T08:00", "2026-09-09T09:00", "2026-09-09T10:00", "2026-09-09T11:00", "2026-09-09T12:00", "2026-09-09T13:00", "2026-09-09T14:00", "2026-09-09T15:00", "2026-09-09T16:00", "2026-09-09T17:00", "2026-09-09T18:00", "2026-09-09T19:00", "2026-09-09T20:00", "2026-09-09T21:00", "2026-09-09T22:00", "2026-09-09T23:00", "2026-09-10T00:00", "2026-09-10T01:00", "2026-09-10T02:00", "2026-09-10T03:00", "2026-09-10T04:00", "2026-09-10T05:00", "2026-09-10T06:00", "2026-09-10T07:00", "2026-09-10T08:00", "2026-09-10T09:00", "2026-09-10T10:00", "2026-09-10T11:00", "2026-09-10T12:00", "2026-09-10T13:00", "2026-09-10T14:00", "2026-09-10T15:00", "2026-09-10T16:00", "2026-09-10T17:00", "2026-09-10T18:00", "2026-09-10T19:00", "2026-09-10T20:00", "2026-09-10T21:00", "2026-09-10T22:00", "2026-09-10T23:00", "2026-09-11T00:00", "2026-09-11T01:00", "2026-09-11T02:00", "2026-09-11T03:00", "2026-09-11T04:00", "2026-09-11T05:00", "2026-09-11T06:00", "2026-09-11T07:00", "2026-09-11T08:00", "2026-09-11T09:00", "2026-09-11T10:00", "2026-09-11T11:00", "2026-09-11T12:00", "2026-09-11T13:00", "2026-09-11T14:00", "2026-09-11T15:00", "2026-09-11T16:00", "2026-09-11T17:00", "2026-09-11T18:00", "2026-09-11T19:00", "2026-09-11T20:00", "2026-09-11T21:00", "2026-09-11T22:00", "2026-09-11T23:00", "2026-09-12T00:00", "2026-09-12T01:00", "2026-09-12T02:00", "2026-09-12T03:00", "2026-09-12T04:00", "2026-09-12T05:00", "2026-09-12T06:00", "2026-09-12T07:00", "2026-09-12T08:00", "2026-09-12T09:00", "2026-09-12T10:00", "2026-09-12T11:00", "2026-09-12T12:00", "2026-09-12T13:00", "2026-09-12T14:00", "2026-09-12T15:00", "2026-09-12T16:00", "2026-09-12T17:00", "2026-09-12T18:00", "2026-09-12T19:00", "2026-09-12T20:00", "2026-09-12T21:00", "2026-09-12T22:00", "2026-09-12T23:00"], "precip24": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.8, 1.0, 1.2, 1.4, 1.7, 2.1, 2.3, 2.4, 2.4, 2.4, 2.4, 2.5, 2.6, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.0, 1.8, 1.6, 1.4, 1.1, 0.7, 0.5, 0.4, 0.4, 0.4, 0.3, 0.2, 0.1, 0.0, 0.0, 0.0], "saturacion": [17.4, 17.4, 17.4, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.3, 18.3, 18.3, 18.3, 18.3, 18.3, 17.2, 17.2, 17.2, 17.2, 17.2, 17.2, 18.7, 18.7, 18.7, 18.7, 18.7, 18.7, 18.1, 18.1, 18.1, 18.1, 18.1, 18.1, 17.9, 17.9, 18.1, 18.1, 18.1, 18.1, 16.4, 16.4, 16.4, 16.4, 16.4, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.2, 16.2, 16.2, 16.2, 16.2, 16.2, 16.6, 16.6, 16.6, 16.8, 16.8, 16.8, 17.2, 17.2, 17.2, 17.2, 17.2, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.5, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 19.4, 19.8, 20.2, 20.8, 21.5, 22.3, 22.6, 22.8, 22.8, 22.8, 22.8, 23.0, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.0, 23.0, 23.0, 23.0, 22.8, 22.6, 22.5, 22.3, 22.3, 22.1, 22.1, 22.1, 22.1, 22.1], "esPronostico": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}, {"id": "acceso_meseta", "nombre": "Acceso Meseta", "color": "#eb6834", "colorDark": "#d95926", "horas": ["2026-09-07T00:00", "2026-09-07T01:00", "2026-09-07T02:00", "2026-09-07T03:00", "2026-09-07T04:00", "2026-09-07T05:00", "2026-09-07T06:00", "2026-09-07T07:00", "2026-09-07T08:00", "2026-09-07T09:00", "2026-09-07T10:00", "2026-09-07T11:00", "2026-09-07T12:00", "2026-09-07T13:00", "2026-09-07T14:00", "2026-09-07T15:00", "2026-09-07T16:00", "2026-09-07T17:00", "2026-09-07T18:00", "2026-09-07T19:00", "2026-09-07T20:00", "2026-09-07T21:00", "2026-09-07T22:00", "2026-09-07T23:00", "2026-09-08T00:00", "2026-09-08T01:00", "2026-09-08T02:00", "2026-09-08T03:00", "2026-09-08T04:00", "2026-09-08T05:00", "2026-09-08T06:00", "2026-09-08T07:00", "2026-09-08T08:00", "2026-09-08T09:00", "2026-09-08T10:00", "2026-09-08T11:00", "2026-09-08T12:00", "2026-09-08T13:00", "2026-09-08T14:00", "2026-09-08T15:00", "2026-09-08T16:00", "2026-09-08T17:00", "2026-09-08T18:00", "2026-09-08T19:00", "2026-09-08T20:00", "2026-09-08T21:00", "2026-09-08T22:00", "2026-09-08T23:00", "2026-09-09T00:00", "2026-09-09T01:00", "2026-09-09T02:00", "2026-09-09T03:00", "2026-09-09T04:00", "2026-09-09T05:00", "2026-09-09T06:00", "2026-09-09T07:00", "2026-09-09T08:00", "2026-09-09T09:00", "2026-09-09T10:00", "2026-09-09T11:00", "2026-09-09T12:00", "2026-09-09T13:00", "2026-09-09T14:00", "2026-09-09T15:00", "2026-09-09T16:00", "2026-09-09T17:00", "2026-09-09T18:00", "2026-09-09T19:00", "2026-09-09T20:00", "2026-09-09T21:00", "2026-09-09T22:00", "2026-09-09T23:00", "2026-09-10T00:00", "2026-09-10T01:00", "2026-09-10T02:00", "2026-09-10T03:00", "2026-09-10T04:00", "2026-09-10T05:00", "2026-09-10T06:00", "2026-09-10T07:00", "2026-09-10T08:00", "2026-09-10T09:00", "2026-09-10T10:00", "2026-09-10T11:00", "2026-09-10T12:00", "2026-09-10T13:00", "2026-09-10T14:00", "2026-09-10T15:00", "2026-09-10T16:00", "2026-09-10T17:00", "2026-09-10T18:00", "2026-09-10T19:00", "2026-09-10T20:00", "2026-09-10T21:00", "2026-09-10T22:00", "2026-09-10T23:00", "2026-09-11T00:00", "2026-09-11T01:00", "2026-09-11T02:00", "2026-09-11T03:00", "2026-09-11T04:00", "2026-09-11T05:00", "2026-09-11T06:00", "2026-09-11T07:00", "2026-09-11T08:00", "2026-09-11T09:00", "2026-09-11T10:00", "2026-09-11T11:00", "2026-09-11T12:00", "2026-09-11T13:00", "2026-09-11T14:00", "2026-09-11T15:00", "2026-09-11T16:00", "2026-09-11T17:00", "2026-09-11T18:00", "2026-09-11T19:00", "2026-09-11T20:00", "2026-09-11T21:00", "2026-09-11T22:00", "2026-09-11T23:00", "2026-09-12T00:00", "2026-09-12T01:00", "2026-09-12T02:00", "2026-09-12T03:00", "2026-09-12T04:00", "2026-09-12T05:00", "2026-09-12T06:00", "2026-09-12T07:00", "2026-09-12T08:00", "2026-09-12T09:00", "2026-09-12T10:00", "2026-09-12T11:00", "2026-09-12T12:00", "2026-09-12T13:00", "2026-09-12T14:00", "2026-09-12T15:00", "2026-09-12T16:00", "2026-09-12T17:00", "2026-09-12T18:00", "2026-09-12T19:00", "2026-09-12T20:00", "2026-09-12T21:00", "2026-09-12T22:00", "2026-09-12T23:00"], "precip24": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.7, 0.8, 0.9, 1.2, 1.5, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.3, 1.0, 0.9, 0.8, 0.5, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "saturacion": [16.4, 16.4, 16.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.2, 17.2, 17.2, 17.2, 17.2, 17.2, 15.7, 15.7, 15.7, 15.7, 15.8, 15.8, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 18.9, 18.9, 18.7, 18.7, 18.5, 18.3, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 16.2, 16.2, 16.2, 16.2, 16.2, 16.2, 15.7, 15.7, 15.7, 15.7, 15.7, 15.7, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 15.7, 15.7, 15.7, 15.7, 15.7, 15.7, 16.2, 16.2, 16.2, 16.2, 16.2, 16.2, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 17.0, 17.0, 17.0, 17.9, 18.7, 18.9, 19.2, 19.8, 20.4, 20.8, 20.9, 20.8, 20.8, 20.8, 20.8, 20.9, 20.9, 20.9, 20.9, 20.9, 20.9, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.6, 20.6, 20.4, 20.4, 20.2, 20.0, 20.0, 20.0, 19.8, 19.8, 19.8, 19.8], "esPronostico": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}, {"id": "tratayen_sur", "nombre": "Tratayén / Sector Sur", "color": "#1baf7a", "colorDark": "#199e70", "horas": ["2026-09-07T00:00", "2026-09-07T01:00", "2026-09-07T02:00", "2026-09-07T03:00", "2026-09-07T04:00", "2026-09-07T05:00", "2026-09-07T06:00", "2026-09-07T07:00", "2026-09-07T08:00", "2026-09-07T09:00", "2026-09-07T10:00", "2026-09-07T11:00", "2026-09-07T12:00", "2026-09-07T13:00", "2026-09-07T14:00", "2026-09-07T15:00", "2026-09-07T16:00", "2026-09-07T17:00", "2026-09-07T18:00", "2026-09-07T19:00", "2026-09-07T20:00", "2026-09-07T21:00", "2026-09-07T22:00", "2026-09-07T23:00", "2026-09-08T00:00", "2026-09-08T01:00", "2026-09-08T02:00", "2026-09-08T03:00", "2026-09-08T04:00", "2026-09-08T05:00", "2026-09-08T06:00", "2026-09-08T07:00", "2026-09-08T08:00", "2026-09-08T09:00", "2026-09-08T10:00", "2026-09-08T11:00", "2026-09-08T12:00", "2026-09-08T13:00", "2026-09-08T14:00", "2026-09-08T15:00", "2026-09-08T16:00", "2026-09-08T17:00", "2026-09-08T18:00", "2026-09-08T19:00", "2026-09-08T20:00", "2026-09-08T21:00", "2026-09-08T22:00", "2026-09-08T23:00", "2026-09-09T00:00", "2026-09-09T01:00", "2026-09-09T02:00", "2026-09-09T03:00", "2026-09-09T04:00", "2026-09-09T05:00", "2026-09-09T06:00", "2026-09-09T07:00", "2026-09-09T08:00", "2026-09-09T09:00", "2026-09-09T10:00", "2026-09-09T11:00", "2026-09-09T12:00", "2026-09-09T13:00", "2026-09-09T14:00", "2026-09-09T15:00", "2026-09-09T16:00", "2026-09-09T17:00", "2026-09-09T18:00", "2026-09-09T19:00", "2026-09-09T20:00", "2026-09-09T21:00", "2026-09-09T22:00", "2026-09-09T23:00", "2026-09-10T00:00", "2026-09-10T01:00", "2026-09-10T02:00", "2026-09-10T03:00", "2026-09-10T04:00", "2026-09-10T05:00", "2026-09-10T06:00", "2026-09-10T07:00", "2026-09-10T08:00", "2026-09-10T09:00", "2026-09-10T10:00", "2026-09-10T11:00", "2026-09-10T12:00", "2026-09-10T13:00", "2026-09-10T14:00", "2026-09-10T15:00", "2026-09-10T16:00", "2026-09-10T17:00", "2026-09-10T18:00", "2026-09-10T19:00", "2026-09-10T20:00", "2026-09-10T21:00", "2026-09-10T22:00", "2026-09-10T23:00", "2026-09-11T00:00", "2026-09-11T01:00", "2026-09-11T02:00", "2026-09-11T03:00", "2026-09-11T04:00", "2026-09-11T05:00", "2026-09-11T06:00", "2026-09-11T07:00", "2026-09-11T08:00", "2026-09-11T09:00", "2026-09-11T10:00", "2026-09-11T11:00", "2026-09-11T12:00", "2026-09-11T13:00", "2026-09-11T14:00", "2026-09-11T15:00", "2026-09-11T16:00", "2026-09-11T17:00", "2026-09-11T18:00", "2026-09-11T19:00", "2026-09-11T20:00", "2026-09-11T21:00", "2026-09-11T22:00", "2026-09-11T23:00", "2026-09-12T00:00", "2026-09-12T01:00", "2026-09-12T02:00", "2026-09-12T03:00", "2026-09-12T04:00", "2026-09-12T05:00", "2026-09-12T06:00", "2026-09-12T07:00", "2026-09-12T08:00", "2026-09-12T09:00", "2026-09-12T10:00", "2026-09-12T11:00", "2026-09-12T12:00", "2026-09-12T13:00", "2026-09-12T14:00", "2026-09-12T15:00", "2026-09-12T16:00", "2026-09-12T17:00", "2026-09-12T18:00", "2026-09-12T19:00", "2026-09-12T20:00", "2026-09-12T21:00", "2026-09-12T22:00", "2026-09-12T23:00"], "precip24": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.9, 1.2, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3, 1.4, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.3, 1.1, 1.0, 0.9, 0.8, 0.6, 0.3, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.0, 0.0], "saturacion": [19.2, 19.2, 19.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.0, 20.0, 20.0, 19.8, 19.8, 19.8, 19.8, 19.8, 19.8, 18.9, 18.9, 18.9, 18.9, 18.9, 18.9, 21.7, 21.7, 21.5, 21.5, 21.5, 21.5, 20.0, 20.0, 20.0, 20.0, 19.8, 19.8, 19.4, 19.4, 19.4, 19.4, 19.4, 19.4, 19.2, 19.2, 19.2, 19.2, 19.2, 19.2, 19.1, 19.1, 19.1, 19.1, 19.1, 19.1, 19.6, 19.6, 19.6, 19.6, 19.6, 19.6, 19.4, 19.4, 19.4, 19.4, 19.4, 19.4, 19.6, 19.6, 19.6, 19.6, 19.8, 19.8, 20.2, 20.2, 20.2, 20.2, 20.4, 20.4, 20.4, 20.4, 20.4, 20.2, 20.2, 20.2, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.4, 20.9, 21.1, 21.3, 21.7, 22.1, 22.6, 22.8, 22.8, 22.8, 22.8, 22.8, 22.8, 23.0, 23.2, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.2, 23.2, 23.0, 23.0, 22.8, 22.8, 22.6, 22.5, 22.5, 22.5, 22.5, 22.5, 22.5], "esPronostico": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}], "umbrales": {"precipAmarillo": 3.0, "precipRojo": 7.0, "satAmarillo": 60.0, "satRojo": 75.0}};</script>
+<script>window.__DATOS__ = {"series": [{"id": "anelo_pueblo", "codigo": "AÑ-01", "nombre": "Añelo Pueblo", "color": "#2a78d6", "colorDark": "#3987e5", "horas": ["2026-09-07T00:00", "2026-09-07T01:00", "2026-09-07T02:00", "2026-09-07T03:00", "2026-09-07T04:00", "2026-09-07T05:00", "2026-09-07T06:00", "2026-09-07T07:00", "2026-09-07T08:00", "2026-09-07T09:00", "2026-09-07T10:00", "2026-09-07T11:00", "2026-09-07T12:00", "2026-09-07T13:00", "2026-09-07T14:00", "2026-09-07T15:00", "2026-09-07T16:00", "2026-09-07T17:00", "2026-09-07T18:00", "2026-09-07T19:00", "2026-09-07T20:00", "2026-09-07T21:00", "2026-09-07T22:00", "2026-09-07T23:00", "2026-09-08T00:00", "2026-09-08T01:00", "2026-09-08T02:00", "2026-09-08T03:00", "2026-09-08T04:00", "2026-09-08T05:00", "2026-09-08T06:00", "2026-09-08T07:00", "2026-09-08T08:00", "2026-09-08T09:00", "2026-09-08T10:00", "2026-09-08T11:00", "2026-09-08T12:00", "2026-09-08T13:00", "2026-09-08T14:00", "2026-09-08T15:00", "2026-09-08T16:00", "2026-09-08T17:00", "2026-09-08T18:00", "2026-09-08T19:00", "2026-09-08T20:00", "2026-09-08T21:00", "2026-09-08T22:00", "2026-09-08T23:00", "2026-09-09T00:00", "2026-09-09T01:00", "2026-09-09T02:00", "2026-09-09T03:00", "2026-09-09T04:00", "2026-09-09T05:00", "2026-09-09T06:00", "2026-09-09T07:00", "2026-09-09T08:00", "2026-09-09T09:00", "2026-09-09T10:00", "2026-09-09T11:00", "2026-09-09T12:00", "2026-09-09T13:00", "2026-09-09T14:00", "2026-09-09T15:00", "2026-09-09T16:00", "2026-09-09T17:00", "2026-09-09T18:00", "2026-09-09T19:00", "2026-09-09T20:00", "2026-09-09T21:00", "2026-09-09T22:00", "2026-09-09T23:00", "2026-09-10T00:00", "2026-09-10T01:00", "2026-09-10T02:00", "2026-09-10T03:00", "2026-09-10T04:00", "2026-09-10T05:00", "2026-09-10T06:00", "2026-09-10T07:00", "2026-09-10T08:00", "2026-09-10T09:00", "2026-09-10T10:00", "2026-09-10T11:00", "2026-09-10T12:00", "2026-09-10T13:00", "2026-09-10T14:00", "2026-09-10T15:00", "2026-09-10T16:00", "2026-09-10T17:00", "2026-09-10T18:00", "2026-09-10T19:00", "2026-09-10T20:00", "2026-09-10T21:00", "2026-09-10T22:00", "2026-09-10T23:00", "2026-09-11T00:00", "2026-09-11T01:00", "2026-09-11T02:00", "2026-09-11T03:00", "2026-09-11T04:00", "2026-09-11T05:00", "2026-09-11T06:00", "2026-09-11T07:00", "2026-09-11T08:00", "2026-09-11T09:00", "2026-09-11T10:00", "2026-09-11T11:00", "2026-09-11T12:00", "2026-09-11T13:00", "2026-09-11T14:00", "2026-09-11T15:00", "2026-09-11T16:00", "2026-09-11T17:00", "2026-09-11T18:00", "2026-09-11T19:00", "2026-09-11T20:00", "2026-09-11T21:00", "2026-09-11T22:00", "2026-09-11T23:00", "2026-09-12T00:00", "2026-09-12T01:00", "2026-09-12T02:00", "2026-09-12T03:00", "2026-09-12T04:00", "2026-09-12T05:00", "2026-09-12T06:00", "2026-09-12T07:00", "2026-09-12T08:00", "2026-09-12T09:00", "2026-09-12T10:00", "2026-09-12T11:00", "2026-09-12T12:00", "2026-09-12T13:00", "2026-09-12T14:00", "2026-09-12T15:00", "2026-09-12T16:00", "2026-09-12T17:00", "2026-09-12T18:00", "2026-09-12T19:00", "2026-09-12T20:00", "2026-09-12T21:00", "2026-09-12T22:00", "2026-09-12T23:00"], "precip24": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.8, 1.0, 1.2, 1.4, 1.7, 2.1, 2.3, 2.4, 2.4, 2.4, 2.4, 2.5, 2.6, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.7, 2.0, 1.8, 1.6, 1.4, 1.1, 0.7, 0.5, 0.4, 0.4, 0.4, 0.3, 0.2, 0.1, 0.0, 0.0, 0.0], "saturacion": [17.4, 17.4, 17.4, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.3, 18.3, 18.3, 18.3, 18.3, 18.3, 17.2, 17.2, 17.2, 17.2, 17.2, 17.2, 18.7, 18.7, 18.7, 18.7, 18.7, 18.7, 18.1, 18.1, 18.1, 18.1, 18.1, 18.1, 17.9, 17.9, 18.1, 18.1, 18.1, 18.1, 16.4, 16.4, 16.4, 16.4, 16.4, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.2, 16.2, 16.2, 16.2, 16.2, 16.2, 16.6, 16.6, 16.6, 16.8, 16.8, 16.8, 17.2, 17.2, 17.2, 17.2, 17.2, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.5, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 19.4, 19.8, 20.2, 20.8, 21.5, 22.3, 22.6, 22.8, 22.8, 22.8, 22.8, 23.0, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.2, 23.0, 23.0, 23.0, 23.0, 22.8, 22.6, 22.5, 22.3, 22.3, 22.1, 22.1, 22.1, 22.1, 22.1], "esPronostico": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}, {"id": "acceso_meseta", "codigo": "AM-02", "nombre": "Acceso Meseta", "color": "#eb6834", "colorDark": "#d95926", "horas": ["2026-09-07T00:00", "2026-09-07T01:00", "2026-09-07T02:00", "2026-09-07T03:00", "2026-09-07T04:00", "2026-09-07T05:00", "2026-09-07T06:00", "2026-09-07T07:00", "2026-09-07T08:00", "2026-09-07T09:00", "2026-09-07T10:00", "2026-09-07T11:00", "2026-09-07T12:00", "2026-09-07T13:00", "2026-09-07T14:00", "2026-09-07T15:00", "2026-09-07T16:00", "2026-09-07T17:00", "2026-09-07T18:00", "2026-09-07T19:00", "2026-09-07T20:00", "2026-09-07T21:00", "2026-09-07T22:00", "2026-09-07T23:00", "2026-09-08T00:00", "2026-09-08T01:00", "2026-09-08T02:00", "2026-09-08T03:00", "2026-09-08T04:00", "2026-09-08T05:00", "2026-09-08T06:00", "2026-09-08T07:00", "2026-09-08T08:00", "2026-09-08T09:00", "2026-09-08T10:00", "2026-09-08T11:00", "2026-09-08T12:00", "2026-09-08T13:00", "2026-09-08T14:00", "2026-09-08T15:00", "2026-09-08T16:00", "2026-09-08T17:00", "2026-09-08T18:00", "2026-09-08T19:00", "2026-09-08T20:00", "2026-09-08T21:00", "2026-09-08T22:00", "2026-09-08T23:00", "2026-09-09T00:00", "2026-09-09T01:00", "2026-09-09T02:00", "2026-09-09T03:00", "2026-09-09T04:00", "2026-09-09T05:00", "2026-09-09T06:00", "2026-09-09T07:00", "2026-09-09T08:00", "2026-09-09T09:00", "2026-09-09T10:00", "2026-09-09T11:00", "2026-09-09T12:00", "2026-09-09T13:00", "2026-09-09T14:00", "2026-09-09T15:00", "2026-09-09T16:00", "2026-09-09T17:00", "2026-09-09T18:00", "2026-09-09T19:00", "2026-09-09T20:00", "2026-09-09T21:00", "2026-09-09T22:00", "2026-09-09T23:00", "2026-09-10T00:00", "2026-09-10T01:00", "2026-09-10T02:00", "2026-09-10T03:00", "2026-09-10T04:00", "2026-09-10T05:00", "2026-09-10T06:00", "2026-09-10T07:00", "2026-09-10T08:00", "2026-09-10T09:00", "2026-09-10T10:00", "2026-09-10T11:00", "2026-09-10T12:00", "2026-09-10T13:00", "2026-09-10T14:00", "2026-09-10T15:00", "2026-09-10T16:00", "2026-09-10T17:00", "2026-09-10T18:00", "2026-09-10T19:00", "2026-09-10T20:00", "2026-09-10T21:00", "2026-09-10T22:00", "2026-09-10T23:00", "2026-09-11T00:00", "2026-09-11T01:00", "2026-09-11T02:00", "2026-09-11T03:00", "2026-09-11T04:00", "2026-09-11T05:00", "2026-09-11T06:00", "2026-09-11T07:00", "2026-09-11T08:00", "2026-09-11T09:00", "2026-09-11T10:00", "2026-09-11T11:00", "2026-09-11T12:00", "2026-09-11T13:00", "2026-09-11T14:00", "2026-09-11T15:00", "2026-09-11T16:00", "2026-09-11T17:00", "2026-09-11T18:00", "2026-09-11T19:00", "2026-09-11T20:00", "2026-09-11T21:00", "2026-09-11T22:00", "2026-09-11T23:00", "2026-09-12T00:00", "2026-09-12T01:00", "2026-09-12T02:00", "2026-09-12T03:00", "2026-09-12T04:00", "2026-09-12T05:00", "2026-09-12T06:00", "2026-09-12T07:00", "2026-09-12T08:00", "2026-09-12T09:00", "2026-09-12T10:00", "2026-09-12T11:00", "2026-09-12T12:00", "2026-09-12T13:00", "2026-09-12T14:00", "2026-09-12T15:00", "2026-09-12T16:00", "2026-09-12T17:00", "2026-09-12T18:00", "2026-09-12T19:00", "2026-09-12T20:00", "2026-09-12T21:00", "2026-09-12T22:00", "2026-09-12T23:00"], "precip24": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.7, 0.8, 0.9, 1.2, 1.5, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.3, 1.0, 0.9, 0.8, 0.5, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "saturacion": [16.4, 16.4, 16.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.4, 17.2, 17.2, 17.2, 17.2, 17.2, 17.2, 15.7, 15.7, 15.7, 15.7, 15.8, 15.8, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 18.9, 18.9, 18.7, 18.7, 18.5, 18.3, 17.7, 17.7, 17.7, 17.7, 17.7, 17.7, 16.2, 16.2, 16.2, 16.2, 16.2, 16.2, 15.7, 15.7, 15.7, 15.7, 15.7, 15.7, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 15.7, 15.7, 15.7, 15.7, 15.7, 15.7, 16.2, 16.2, 16.2, 16.2, 16.2, 16.2, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 17.0, 17.0, 17.0, 17.9, 18.7, 18.9, 19.2, 19.8, 20.4, 20.8, 20.9, 20.8, 20.8, 20.8, 20.8, 20.9, 20.9, 20.9, 20.9, 20.9, 20.9, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.8, 20.6, 20.6, 20.4, 20.4, 20.2, 20.0, 20.0, 20.0, 19.8, 19.8, 19.8, 19.8], "esPronostico": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}, {"id": "tratayen_sur", "codigo": "TR-03", "nombre": "Tratayén / Sector Sur", "color": "#1baf7a", "colorDark": "#199e70", "horas": ["2026-09-07T00:00", "2026-09-07T01:00", "2026-09-07T02:00", "2026-09-07T03:00", "2026-09-07T04:00", "2026-09-07T05:00", "2026-09-07T06:00", "2026-09-07T07:00", "2026-09-07T08:00", "2026-09-07T09:00", "2026-09-07T10:00", "2026-09-07T11:00", "2026-09-07T12:00", "2026-09-07T13:00", "2026-09-07T14:00", "2026-09-07T15:00", "2026-09-07T16:00", "2026-09-07T17:00", "2026-09-07T18:00", "2026-09-07T19:00", "2026-09-07T20:00", "2026-09-07T21:00", "2026-09-07T22:00", "2026-09-07T23:00", "2026-09-08T00:00", "2026-09-08T01:00", "2026-09-08T02:00", "2026-09-08T03:00", "2026-09-08T04:00", "2026-09-08T05:00", "2026-09-08T06:00", "2026-09-08T07:00", "2026-09-08T08:00", "2026-09-08T09:00", "2026-09-08T10:00", "2026-09-08T11:00", "2026-09-08T12:00", "2026-09-08T13:00", "2026-09-08T14:00", "2026-09-08T15:00", "2026-09-08T16:00", "2026-09-08T17:00", "2026-09-08T18:00", "2026-09-08T19:00", "2026-09-08T20:00", "2026-09-08T21:00", "2026-09-08T22:00", "2026-09-08T23:00", "2026-09-09T00:00", "2026-09-09T01:00", "2026-09-09T02:00", "2026-09-09T03:00", "2026-09-09T04:00", "2026-09-09T05:00", "2026-09-09T06:00", "2026-09-09T07:00", "2026-09-09T08:00", "2026-09-09T09:00", "2026-09-09T10:00", "2026-09-09T11:00", "2026-09-09T12:00", "2026-09-09T13:00", "2026-09-09T14:00", "2026-09-09T15:00", "2026-09-09T16:00", "2026-09-09T17:00", "2026-09-09T18:00", "2026-09-09T19:00", "2026-09-09T20:00", "2026-09-09T21:00", "2026-09-09T22:00", "2026-09-09T23:00", "2026-09-10T00:00", "2026-09-10T01:00", "2026-09-10T02:00", "2026-09-10T03:00", "2026-09-10T04:00", "2026-09-10T05:00", "2026-09-10T06:00", "2026-09-10T07:00", "2026-09-10T08:00", "2026-09-10T09:00", "2026-09-10T10:00", "2026-09-10T11:00", "2026-09-10T12:00", "2026-09-10T13:00", "2026-09-10T14:00", "2026-09-10T15:00", "2026-09-10T16:00", "2026-09-10T17:00", "2026-09-10T18:00", "2026-09-10T19:00", "2026-09-10T20:00", "2026-09-10T21:00", "2026-09-10T22:00", "2026-09-10T23:00", "2026-09-11T00:00", "2026-09-11T01:00", "2026-09-11T02:00", "2026-09-11T03:00", "2026-09-11T04:00", "2026-09-11T05:00", "2026-09-11T06:00", "2026-09-11T07:00", "2026-09-11T08:00", "2026-09-11T09:00", "2026-09-11T10:00", "2026-09-11T11:00", "2026-09-11T12:00", "2026-09-11T13:00", "2026-09-11T14:00", "2026-09-11T15:00", "2026-09-11T16:00", "2026-09-11T17:00", "2026-09-11T18:00", "2026-09-11T19:00", "2026-09-11T20:00", "2026-09-11T21:00", "2026-09-11T22:00", "2026-09-11T23:00", "2026-09-12T00:00", "2026-09-12T01:00", "2026-09-12T02:00", "2026-09-12T03:00", "2026-09-12T04:00", "2026-09-12T05:00", "2026-09-12T06:00", "2026-09-12T07:00", "2026-09-12T08:00", "2026-09-12T09:00", "2026-09-12T10:00", "2026-09-12T11:00", "2026-09-12T12:00", "2026-09-12T13:00", "2026-09-12T14:00", "2026-09-12T15:00", "2026-09-12T16:00", "2026-09-12T17:00", "2026-09-12T18:00", "2026-09-12T19:00", "2026-09-12T20:00", "2026-09-12T21:00", "2026-09-12T22:00", "2026-09-12T23:00"], "precip24": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.9, 1.2, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3, 1.4, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.3, 1.1, 1.0, 0.9, 0.8, 0.6, 0.3, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.0, 0.0], "saturacion": [19.2, 19.2, 19.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.2, 20.0, 20.0, 20.0, 19.8, 19.8, 19.8, 19.8, 19.8, 19.8, 18.9, 18.9, 18.9, 18.9, 18.9, 18.9, 21.7, 21.7, 21.5, 21.5, 21.5, 21.5, 20.0, 20.0, 20.0, 20.0, 19.8, 19.8, 19.4, 19.4, 19.4, 19.4, 19.4, 19.4, 19.2, 19.2, 19.2, 19.2, 19.2, 19.2, 19.1, 19.1, 19.1, 19.1, 19.1, 19.1, 19.6, 19.6, 19.6, 19.6, 19.6, 19.6, 19.4, 19.4, 19.4, 19.4, 19.4, 19.4, 19.6, 19.6, 19.6, 19.6, 19.8, 19.8, 20.2, 20.2, 20.2, 20.2, 20.4, 20.4, 20.4, 20.4, 20.4, 20.2, 20.2, 20.2, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.4, 20.9, 21.1, 21.3, 21.7, 22.1, 22.6, 22.8, 22.8, 22.8, 22.8, 22.8, 22.8, 23.0, 23.2, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.4, 23.2, 23.2, 23.0, 23.0, 22.8, 22.8, 22.6, 22.5, 22.5, 22.5, 22.5, 22.5, 22.5], "esPronostico": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}], "umbrales": {"precipAmarillo": 3.0, "precipRojo": 7.0, "satAmarillo": 60.0, "satRojo": 75.0}};</script>
 <script>
 (function(){
   const D = window.__DATOS__;
-  const dark = () => document.documentElement.dataset.theme === 'dark'
-    || (document.documentElement.dataset.theme !== 'light'
-        && matchMedia('(prefers-color-scheme: dark)').matches);
+  const dark = () => matchMedia('(prefers-color-scheme: dark)').matches
+                     && document.documentElement.dataset.theme !== 'light';
   const col = s => dark() ? s.colorDark : s.color;
   const css = v => getComputedStyle(document.body).getPropertyValue(v).trim();
 
   const NS='http://www.w3.org/2000/svg';
   const el=(n,a={})=>{const e=document.createElementNS(NS,n);
     for(const k in a) e.setAttribute(k,a[k]); return e;};
-
   const tip = document.getElementById('tip');
 
   function fmtHora(iso){
@@ -360,7 +515,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; 
     if(!host) return;
     host.innerHTML='';
 
-    const W=940, H=cfg.alto||250, m={t:14,r:118,b:30,l:46};
+    const W=1000, H=cfg.alto||230, m={t:14,r:112,b:28,l:44};
     const iw=W-m.l-m.r, ih=H-m.t-m.b;
     const n=D.series[0][cfg.campo].length;
     const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img',
@@ -374,53 +529,52 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; 
     const x=i=>m.l+(i/(n-1))*iw;
     const y=v=>m.t+ih-(v/max)*ih;
 
-    // --- grilla + eje Y ---
-    const pasos=4;
-    for(let k=0;k<=pasos;k++){
-      const v=max*k/pasos, yy=y(v);
+    // grilla + eje Y
+    for(let k=0;k<=4;k++){
+      const v=max*k/4, yy=y(v);
       svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:yy,y2:yy,
-        stroke:css('--grid'),'stroke-width':1}));
-      const t=el('text',{x:m.l-9,y:yy+4,'text-anchor':'end',
-        fill:css('--muted'),'font-size':11,'font-family':'system-ui,sans-serif'});
+        stroke:css('--linea'),'stroke-width':1}));
+      const t=el('text',{x:m.l-8,y:yy+4,'text-anchor':'end',fill:css('--tinta-3'),
+        'font-size':10.5,'font-family':'Segoe UI,system-ui,sans-serif'});
       t.textContent=(max>=20?Math.round(v):v.toFixed(1));
       svg.appendChild(t);
     }
 
-    // --- umbrales de la matriz de riesgo ---
+    // umbrales de la matriz
     cfg.umbrales.forEach(u=>{
       svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:y(u.v),y2:y(u.v),
-        stroke:u.color,'stroke-width':1.5,'stroke-dasharray':'5 4','opacity':.72}));
-      const t=el('text',{x:m.l+iw+7,y:y(u.v)+3.5,fill:u.color,'font-size':10.5,
-        'font-weight':600,'font-family':'system-ui,sans-serif'});
+        stroke:u.color,'stroke-width':1.5,'stroke-dasharray':'5 4','opacity':.8}));
+      const t=el('text',{x:m.l+iw+6,y:y(u.v)+3.5,fill:u.color,'font-size':10,
+        'font-weight':700,'font-family':'Segoe UI,system-ui,sans-serif'});
       t.textContent=u.etiqueta;
       svg.appendChild(t);
     });
 
-    // --- separador observado / pronóstico ---
+    // separador observado / pronóstico
     const iAhora=D.series[0].esPronostico.findIndex(p=>p);
     if(iAhora>0){
       const xa=x(iAhora);
       svg.appendChild(el('line',{x1:xa,x2:xa,y1:m.t,y2:m.t+ih,
-        stroke:css('--axis'),'stroke-width':1.5,'stroke-dasharray':'2 3'}));
-      const t=el('text',{x:xa+5,y:m.t+11,fill:css('--muted'),'font-size':10,
-        'font-family':'system-ui,sans-serif'});
-      t.textContent='ahora →';
+        stroke:css('--linea-fuerte'),'stroke-width':1.5,'stroke-dasharray':'2 3'}));
+      const t=el('text',{x:xa+5,y:m.t+10,fill:css('--tinta-3'),'font-size':9.5,
+        'font-weight':600,'letter-spacing':'.06em',
+        'font-family':'Segoe UI,system-ui,sans-serif'});
+      t.textContent='AHORA';
       svg.appendChild(t);
     }
 
-    // --- eje X ---
+    // eje X
     for(let i=0;i<n;i+=24){
-      const t=el('text',{x:x(i),y:H-9,'text-anchor':'middle',fill:css('--muted'),
-        'font-size':11,'font-family':'system-ui,sans-serif'});
+      const t=el('text',{x:x(i),y:H-8,'text-anchor':'middle',fill:css('--tinta-3'),
+        'font-size':10.5,'font-family':'Segoe UI,system-ui,sans-serif'});
       const d=new Date(D.series[0].horas[i]);
       t.textContent=String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0');
       svg.appendChild(t);
     }
     svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:m.t+ih,y2:m.t+ih,
-      stroke:css('--axis'),'stroke-width':1}));
+      stroke:css('--linea-fuerte'),'stroke-width':1}));
 
-    // --- series (2px, tramo pronosticado punteado) ---
-    // Las etiquetas directas se colocan al final evitando solapamiento vertical.
+    // series
     const etiquetas=[];
     D.series.forEach(s=>{
       const v=s[cfg.campo];
@@ -437,33 +591,31 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; 
         svg.appendChild(p);
       };
       const corte=iAhora>0?iAhora:n-1;
-      seg(0,corte,false);
-      seg(corte,n-1,true);
+      seg(0,corte,false); seg(corte,n-1,true);
 
-      // etiqueta directa al final (requerida: aqua queda bajo 3:1 en claro)
       let ult=n-1; while(ult>0&&v[ult]==null) ult--;
-      if(v[ult]!=null) etiquetas.push({y:y(v[ult]),color:col(s),texto:s.nombre.split(' ')[0]});
+      if(v[ult]!=null) etiquetas.push({y:y(v[ult]),color:col(s),texto:s.codigo});
     });
 
-    // Anti-colisión: separa las etiquetas al menos 13 px en vertical
+    // anti-colisión de etiquetas directas
     etiquetas.sort((a,b)=>a.y-b.y);
     for(let i=1;i<etiquetas.length;i++){
       if(etiquetas[i].y-etiquetas[i-1].y<13) etiquetas[i].y=etiquetas[i-1].y+13;
     }
     const exceso=etiquetas.length?Math.max(0,etiquetas[etiquetas.length-1].y-(m.t+ih)):0;
     etiquetas.forEach(e=>{
-      const t=el('text',{x:m.l+iw+7,y:e.y-exceso+4,fill:e.color,'font-size':11,
-        'font-weight':620,'font-family':'system-ui,sans-serif'});
+      const t=el('text',{x:m.l+iw+6,y:e.y-exceso+4,fill:e.color,'font-size':10.5,
+        'font-weight':700,'font-family':'ui-monospace,Consolas,monospace'});
       t.textContent=e.texto;
       svg.appendChild(t);
     });
 
-    // --- capa de hover: crosshair + tooltip ---
-    const cross=el('line',{x1:0,x2:0,y1:m.t,y2:m.t+ih,stroke:css('--axis'),
+    // capa de hover
+    const cross=el('line',{x1:0,x2:0,y1:m.t,y2:m.t+ih,stroke:css('--linea-fuerte'),
       'stroke-width':1,opacity:0});
     svg.appendChild(cross);
     const pts=D.series.map(s=>{
-      const c=el('circle',{r:4.5,fill:col(s),stroke:css('--surface-1'),
+      const c=el('circle',{r:4,fill:col(s),stroke:css('--panel'),
         'stroke-width':2,opacity:0});
       svg.appendChild(c); return c;
     });
@@ -475,22 +627,21 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; 
       const px=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;
       const i=Math.max(0,Math.min(n-1,Math.round(((px/r.width*W)-m.l)/iw*(n-1))));
       cross.setAttribute('x1',x(i)); cross.setAttribute('x2',x(i));
-      cross.setAttribute('opacity',.85);
+      cross.setAttribute('opacity',.9);
       let filas='';
       D.series.forEach((s,k)=>{
         const v=s[cfg.campo][i];
         if(v==null){pts[k].setAttribute('opacity',0); return;}
         pts[k].setAttribute('cx',x(i)); pts[k].setAttribute('cy',y(v));
         pts[k].setAttribute('opacity',1);
-        filas+=`<div class="r"><em><span class="swatch" style="background:${col(s)}"></span>${s.nombre}</em><strong>${v.toFixed(1)}${cfg.unidad}</strong></div>`;
+        filas+=`<div class="r"><em><span class="sw" style="background:${col(s)}"></span>${s.codigo} ${s.nombre}</em><strong>${v.toFixed(1)}${cfg.unidad}</strong></div>`;
       });
       const pron=D.series[0].esPronostico[i];
       tip.innerHTML=`<b>${fmtHora(D.series[0].horas[i])} · ${pron?'pronóstico':'observado'}</b>${filas}`;
       tip.style.opacity=1;
       const cx=(ev.touches?ev.touches[0].clientX:ev.clientX);
       const cy=(ev.touches?ev.touches[0].clientY:ev.clientY);
-      const tw=tip.offsetWidth;
-      tip.style.left=Math.min(window.innerWidth-tw-10,Math.max(8,cx+14))+'px';
+      tip.style.left=Math.min(window.innerWidth-tip.offsetWidth-10,Math.max(8,cx+14))+'px';
       tip.style.top=Math.max(8,cy-tip.offsetHeight-12)+'px';
     }
     function salir(){
@@ -507,19 +658,19 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; 
 
   function todo(){
     dibujar({
-      id:'g-precip', campo:'precip24', unidad:' mm', alto:250,
-      aria:'Precipitación acumulada móvil de 24 horas por punto crítico',
+      id:'g-precip', campo:'precip24', unidad:' mm', alto:230,
+      aria:'Precipitación acumulada móvil de 24 horas por punto de control',
       umbrales:[
-        {v:D.umbrales.precipAmarillo,etiqueta:'3 mm · amarillo',color:css('--warning')},
-        {v:D.umbrales.precipRojo,etiqueta:'7 mm · rojo',color:css('--critical')}
+        {v:D.umbrales.precipAmarillo,etiqueta:'3 mm',color:css('--warn')},
+        {v:D.umbrales.precipRojo,etiqueta:'7 mm',color:css('--crit')}
       ]
     });
     dibujar({
-      id:'g-suelo', campo:'saturacion', unidad:' %', alto:250, max:100,
-      aria:'Saturación de humedad del suelo por punto crítico',
+      id:'g-suelo', campo:'saturacion', unidad:' %', alto:230, max:100,
+      aria:'Saturación de humedad del suelo por punto de control',
       umbrales:[
-        {v:D.umbrales.satAmarillo,etiqueta:'60 % · amarillo',color:css('--warning')},
-        {v:D.umbrales.satRojo,etiqueta:'75 % · rojo',color:css('--critical')}
+        {v:D.umbrales.satAmarillo,etiqueta:'60 %',color:css('--warn')},
+        {v:D.umbrales.satRojo,etiqueta:'75 %',color:css('--crit')}
       ]
     });
   }
@@ -528,30 +679,28 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; 
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change',todo);
   let t; addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(todo,180);});
 
-  // --- Indicador de frescura ---------------------------------------------
-  // Si el workflow se rompe, la página sigue mostrando el último dato bueno y
-  // nadie se entera. Este cartel hace visible el dato viejo: es la diferencia
-  // entre un tablero confiable y uno peligroso.
+  // ── Frescura del dato ────────────────────────────────────────────────────
+  // Si la corrida se interrumpe, la página seguiría mostrando el último dato
+  // bueno y nadie se enteraría. Un tablero que miente en silencio es peor que
+  // no tener tablero.
   function frescura(){
-    const el=document.getElementById('frescura');
-    if(!el) return;
-    const ts=new Date(el.dataset.ts+'-03:00');
+    const el2=document.getElementById('frescura');
+    if(!el2) return;
+    const ts=new Date(el2.dataset.ts+'-03:00');
     if(isNaN(ts)) return;
     const min=Math.floor((Date.now()-ts.getTime())/60000);
-    let txt, alerta=false;
-    if(min<0)        txt='Próxima corrida en ≤ 2 h';
+    let txt, alarma=false;
+    if(min<0)        txt='—';
     else if(min<90)  txt='hace '+min+' min';
     else if(min<180) txt='hace '+Math.floor(min/60)+' h '+(min%60)+' min';
-    else { txt='DATO DESACTUALIZADO · hace '+Math.floor(min/60)+' h'; alerta=true; }
-    el.textContent=txt;
-    el.style.color = alerta ? css('--critical') : '';
-    el.style.fontWeight = alerta ? '700' : '';
-    // Con corridas cada 2 h, pasadas 3 h algo falló: el cron, la API o el commit.
+    else { txt='DESACTUALIZADO · '+Math.floor(min/60)+' h'; alarma=true; }
+    el2.textContent=txt;
+    el2.classList.toggle('alarma',alarma);
     const b=document.getElementById('banner-stale');
-    if(b) b.hidden = !alerta;
+    if(b) b.hidden=!alarma;
   }
   frescura();
-  setInterval(frescura, 60000);
+  setInterval(frescura,60000);
 })();
 </script>
 </body>
