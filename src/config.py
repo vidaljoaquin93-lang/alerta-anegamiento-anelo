@@ -11,6 +11,20 @@ import os
 from dataclasses import dataclass, field
 from typing import List
 
+
+def _env(nombre: str, defecto: str) -> str:
+    """
+    Lee una variable de entorno tolerando el vacío.
+
+    GitHub Actions expande `${{ vars.X }}` a CADENA VACÍA cuando la variable de
+    repositorio no está definida, no a "ausente". Como os.getenv solo aplica su
+    valor por defecto cuando la variable no existe, sin este filtro la corrida
+    moría con `ValueError: could not convert string to float: ''`.
+    """
+    valor = os.getenv(nombre, "")
+    return valor.strip() or defecto
+
+
 # --------------------------------------------------------------------------- #
 # Puntos geográficos críticos
 # --------------------------------------------------------------------------- #
@@ -81,7 +95,7 @@ VENTANA_PRONOSTICO_H = 24   # lluvia pronosticada en las próximas N horas
 #
 # RECALIBRAR EN CAMPO: correr `python backtest.py --calibracion` y elegir la fila
 # cuya frecuencia de días rojos coincida con lo que reporta vialidad.
-POROSIDAD_TOTAL = float(os.getenv("IIE_POROSIDAD_TOTAL", "0.53"))
+POROSIDAD_TOTAL = float(_env("IIE_POROSIDAD_TOTAL", "0.53"))
 
 # --------------------------------------------------------------------------- #
 # Umbrales de la matriz de riesgo (IIE)
@@ -138,7 +152,7 @@ COLORES_SMN_CRITICOS = ("naranja", "rojo")
 # Margen de seguridad al testear si un punto cae dentro del polígono de un aviso.
 # 0.02° ≈ 2,2 km. Cubre el caso de un punto justo sobre el borde de la grilla CAP
 # y el hecho de que un camino a 2 km del límite está igual de afectado.
-BUFFER_ALERTA_GRADOS = float(os.getenv("IIE_BUFFER_ALERTA", "0.02"))
+BUFFER_ALERTA_GRADOS = float(_env("IIE_BUFFER_ALERTA", "0.02"))
 
 # --------------------------------------------------------------------------- #
 # Red / robustez
@@ -156,15 +170,15 @@ USER_AGENT = "AlertaAnegamientoAnelo/1.0 (monitoreo vial; +github-actions)"
 # Persistencia
 # --------------------------------------------------------------------------- #
 
-DIR_DATOS = os.getenv("IIE_DIR_DATOS", "data")
+DIR_DATOS = _env("IIE_DIR_DATOS", "data")
 CSV_HISTORICO = os.path.join(DIR_DATOS, "historico.csv")
 JSON_ESTADO = os.path.join(DIR_DATOS, "estado_actual.json")
 CSV_ALERTAS_SMN = os.path.join(DIR_DATOS, "alertas_smn.csv")
 CSV_PRONOSTICO = os.path.join(DIR_DATOS, "pronostico_horario.csv")
-DIR_DOCS = os.getenv("IIE_DIR_DOCS", "docs")
+DIR_DOCS = _env("IIE_DIR_DOCS", "docs")
 HTML_TABLERO = os.path.join(DIR_DOCS, "index.html")
 
-RETENCION_DIAS_HISTORICO = int(os.getenv("IIE_RETENCION_DIAS", "400"))
+RETENCION_DIAS_HISTORICO = int(_env("IIE_RETENCION_DIAS", "400"))
 
 # --------------------------------------------------------------------------- #
 # Notificaciones (desactivadas por defecto)
@@ -176,10 +190,10 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
 # Solo notificar a partir de este nivel
-NIVEL_MINIMO_NOTIFICACION = os.getenv("IIE_NIVEL_NOTIFICACION", "amarillo").lower()
+NIVEL_MINIMO_NOTIFICACION = _env("IIE_NIVEL_NOTIFICACION", "amarillo").lower()
 
 # Evita spam: solo notifica si el nivel CAMBIÓ respecto de la corrida anterior
-NOTIFICAR_SOLO_CAMBIOS = os.getenv("IIE_NOTIFICAR_SOLO_CAMBIOS", "true").lower() == "true"
+NOTIFICAR_SOLO_CAMBIOS = _env("IIE_NOTIFICAR_SOLO_CAMBIOS", "true").lower() == "true"
 
 ORDEN_NIVELES = {"verde": 0, "amarillo": 1, "rojo": 2}
 

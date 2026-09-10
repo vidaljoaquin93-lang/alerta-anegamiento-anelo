@@ -167,5 +167,30 @@ class TestConsolidado(unittest.TestCase):
         self.assertEqual(iie.nivel_consolidado([]), "verde")
 
 
+class TestVariablesDeEntorno(unittest.TestCase):
+    """
+    GitHub Actions expande una variable de repositorio inexistente a cadena
+    vacía, no a "ausente". Este test reproduce esa condición, que rompió la
+    primera corrida en CI con ValueError: could not convert string to float.
+    """
+
+    def test_vacio_cae_al_valor_por_defecto(self):
+        self.assertEqual(config._env("IIE_NO_EXISTE_JAMAS", "defecto"), "defecto")
+
+    def test_solo_espacios_cae_al_valor_por_defecto(self):
+        os.environ["IIE_TEST_TMP"] = "   "
+        try:
+            self.assertEqual(config._env("IIE_TEST_TMP", "defecto"), "defecto")
+        finally:
+            del os.environ["IIE_TEST_TMP"]
+
+    def test_valor_real_se_respeta(self):
+        os.environ["IIE_TEST_TMP"] = "0.61"
+        try:
+            self.assertEqual(float(config._env("IIE_TEST_TMP", "0.53")), 0.61)
+        finally:
+            del os.environ["IIE_TEST_TMP"]
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
