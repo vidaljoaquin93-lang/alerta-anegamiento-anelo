@@ -33,6 +33,7 @@ def _env(nombre: str, defecto: str) -> str:
 @dataclass(frozen=True)
 class PuntoCritico:
     id: str
+    codigo: str        # identificador corto para tablas y radio
     nombre: str
     descripcion: str
     lat: float
@@ -42,6 +43,7 @@ class PuntoCritico:
 PUNTOS: List[PuntoCritico] = [
     PuntoCritico(
         id="anelo_pueblo",
+        codigo="AÑ-01",
         nombre="Añelo Pueblo",
         descripcion="Base operativa",
         lat=-38.353,
@@ -49,6 +51,7 @@ PUNTOS: List[PuntoCritico] = [
     ),
     PuntoCritico(
         id="acceso_meseta",
+        codigo="AM-02",
         nombre="Acceso Meseta",
         descripcion="Ruta Prov. 17 / Bajada del Chañar",
         lat=-38.300,
@@ -56,6 +59,7 @@ PUNTOS: List[PuntoCritico] = [
     ),
     PuntoCritico(
         id="tratayen_sur",
+        codigo="TR-03",
         nombre="Tratayén / Sector Sur",
         descripcion="Acceso sur a yacimiento",
         lat=-38.483,

@@ -137,7 +137,9 @@ def obtener_clima(punto: PuntoCritico, ahora: datetime) -> Optional[Dict[str, An
 
     return {
         "punto_id": punto.id,
+        "punto_codigo": punto.codigo,
         "punto_nombre": punto.nombre,
+        "punto_descripcion": punto.descripcion,
         "lat": punto.lat,
         "lon": punto.lon,
         "elevacion_m": data.get("elevation"),
