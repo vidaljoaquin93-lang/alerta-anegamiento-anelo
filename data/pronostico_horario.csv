@@ -89,9 +89,9 @@ anelo_pueblo,Añelo Pueblo,2026-09-12T14:00,0.0,0.149,28.1,7.3,17.5,False
 anelo_pueblo,Añelo Pueblo,2026-09-12T15:00,0.0,0.147,27.7,7.8,17.7,False
 anelo_pueblo,Añelo Pueblo,2026-09-12T16:00,0.0,0.146,27.5,8.3,18.1,False
 anelo_pueblo,Añelo Pueblo,2026-09-12T17:00,0.0,0.145,27.4,8.5,18.0,False
-anelo_pueblo,Añelo Pueblo,2026-09-12T18:00,0.0,0.144,27.2,8.1,16.0,True
-anelo_pueblo,Añelo Pueblo,2026-09-12T19:00,0.0,0.143,27.0,7.1,13.9,True
-anelo_pueblo,Añelo Pueblo,2026-09-12T20:00,0.0,0.143,27.0,5.5,9.4,True
+anelo_pueblo,Añelo Pueblo,2026-09-12T18:00,0.0,0.144,27.2,8.1,16.0,False
+anelo_pueblo,Añelo Pueblo,2026-09-12T19:00,0.0,0.143,27.0,7.1,13.9,False
+anelo_pueblo,Añelo Pueblo,2026-09-12T20:00,0.0,0.143,27.0,5.5,9.4,False
 anelo_pueblo,Añelo Pueblo,2026-09-12T21:00,0.0,0.143,27.0,4.5,8.2,True
 anelo_pueblo,Añelo Pueblo,2026-09-12T22:00,0.0,0.143,27.0,3.8,9.0,True
 anelo_pueblo,Añelo Pueblo,2026-09-12T23:00,0.0,0.143,27.0,3.5,12.4,True
@@ -233,9 +233,9 @@ acceso_meseta,Acceso Meseta,2026-09-12T14:00,0.0,0.148,27.9,7.6,18.4,False
 acceso_meseta,Acceso Meseta,2026-09-12T15:00,0.0,0.146,27.5,8.2,18.5,False
 acceso_meseta,Acceso Meseta,2026-09-12T16:00,0.0,0.145,27.4,8.6,18.5,False
 acceso_meseta,Acceso Meseta,2026-09-12T17:00,0.0,0.143,27.0,8.7,17.7,False
-acceso_meseta,Acceso Meseta,2026-09-12T18:00,0.0,0.142,26.8,8.4,15.4,True
-acceso_meseta,Acceso Meseta,2026-09-12T19:00,0.0,0.141,26.6,7.4,12.4,True
-acceso_meseta,Acceso Meseta,2026-09-12T20:00,0.0,0.141,26.6,5.6,6.5,True
+acceso_meseta,Acceso Meseta,2026-09-12T18:00,0.0,0.142,26.8,8.4,15.4,False
+acceso_meseta,Acceso Meseta,2026-09-12T19:00,0.0,0.141,26.6,7.4,12.4,False
+acceso_meseta,Acceso Meseta,2026-09-12T20:00,0.0,0.141,26.6,5.6,6.5,False
 acceso_meseta,Acceso Meseta,2026-09-12T21:00,0.0,0.141,26.6,4.7,7.2,True
 acceso_meseta,Acceso Meseta,2026-09-12T22:00,0.0,0.141,26.6,4.1,9.3,True
 acceso_meseta,Acceso Meseta,2026-09-12T23:00,0.0,0.141,26.6,3.9,14.5,True
@@ -377,9 +377,9 @@ tratayen_sur,Tratayén / Sector Sur,2026-09-12T14:00,0.0,0.141,26.6,8.0,11.1,Fal
 tratayen_sur,Tratayén / Sector Sur,2026-09-12T15:00,0.0,0.14,26.4,8.5,11.7,False
 tratayen_sur,Tratayén / Sector Sur,2026-09-12T16:00,0.0,0.139,26.2,9.0,11.7,False
 tratayen_sur,Tratayén / Sector Sur,2026-09-12T17:00,0.0,0.137,25.8,9.0,11.8,False
-tratayen_sur,Tratayén / Sector Sur,2026-09-12T18:00,0.0,0.136,25.7,8.6,11.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-09-12T19:00,0.0,0.136,25.7,7.7,10.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-09-12T20:00,0.0,0.136,25.7,5.9,7.0,True
+tratayen_sur,Tratayén / Sector Sur,2026-09-12T18:00,0.0,0.136,25.7,8.6,11.8,False
+tratayen_sur,Tratayén / Sector Sur,2026-09-12T19:00,0.0,0.136,25.7,7.7,10.4,False
+tratayen_sur,Tratayén / Sector Sur,2026-09-12T20:00,0.0,0.136,25.7,5.9,7.0,False
 tratayen_sur,Tratayén / Sector Sur,2026-09-12T21:00,0.0,0.136,25.7,4.8,8.7,True
 tratayen_sur,Tratayén / Sector Sur,2026-09-12T22:00,0.0,0.135,25.5,4.0,10.9,True
 tratayen_sur,Tratayén / Sector Sur,2026-09-12T23:00,0.0,0.135,25.5,3.7,14.0,True
