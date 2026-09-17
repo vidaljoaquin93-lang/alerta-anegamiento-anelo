@@ -1,6 +1,6 @@
 {
-  "timestamp_local": "2026-09-17T18:05:59",
-  "timestamp_utc": "2026-09-17T21:06:55+00:00",
+  "timestamp_local": "2026-09-17T20:59:29",
+  "timestamp_utc": "2026-09-17T23:59:54+00:00",
   "zona": "Añelo — Vaca Muerta (Neuquén)",
   "nivel_consolidado": "verde",
   "iie_maximo": 0.0,
@@ -21,8 +21,8 @@
       "humedad_suelo_m3m3": 0.081,
       "humedad_suelo_max_periodo_m3m3": 0.115,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 22.1,
-      "viento_kmh": 7.1,
+      "temperatura_c": 19.3,
+      "viento_kmh": 12.1,
       "precip_referencia_mm": 0.0,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 15.3,
@@ -41,7 +41,7 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 0.1,
       "hora_pico": "2026-09-19T18:00",
-      "horas_hasta_pico": 48
+      "horas_hasta_pico": 46
     },
     {
       "punto_id": "acceso_meseta",
@@ -58,8 +58,8 @@
       "humedad_suelo_m3m3": 0.074,
       "humedad_suelo_max_periodo_m3m3": 0.111,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 22.9,
-      "viento_kmh": 16.1,
+      "temperatura_c": 19.7,
+      "viento_kmh": 18.2,
       "precip_referencia_mm": 0.0,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 14.0,
@@ -95,8 +95,8 @@
       "humedad_suelo_m3m3": 0.098,
       "humedad_suelo_max_periodo_m3m3": 0.108,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 23.0,
-      "viento_kmh": 14.9,
+      "temperatura_c": 19.2,
+      "viento_kmh": 13.8,
       "precip_referencia_mm": 0.0,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 18.5,
@@ -115,7 +115,7 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 0.8,
       "hora_pico": "2026-09-19T15:00",
-      "horas_hasta_pico": 45
+      "horas_hasta_pico": 43
     }
   ],
   "alertas_smn_vigentes_zona": [],
