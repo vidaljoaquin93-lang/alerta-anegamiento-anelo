@@ -1,6 +1,6 @@
 {
-  "timestamp_local": "2026-09-22T18:02:25",
-  "timestamp_utc": "2026-09-22T21:02:25+00:00",
+  "timestamp_local": "2026-09-22T21:08:25",
+  "timestamp_utc": "2026-09-23T00:08:27+00:00",
   "zona": "Añelo — Vaca Muerta (Neuquén)",
   "nivel_consolidado": "verde",
   "iie_maximo": 8.2,
@@ -21,8 +21,8 @@
       "humedad_suelo_m3m3": 0.073,
       "humedad_suelo_max_periodo_m3m3": 0.1,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 20.0,
-      "viento_kmh": 4.5,
+      "temperatura_c": 16.9,
+      "viento_kmh": 4.9,
       "precip_referencia_mm": 1.3,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 13.8,
@@ -41,7 +41,7 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 1.3,
       "hora_pico": "2026-09-23T09:00",
-      "horas_hasta_pico": 15
+      "horas_hasta_pico": 12
     },
     {
       "punto_id": "acceso_meseta",
@@ -58,8 +58,8 @@
       "humedad_suelo_m3m3": 0.062,
       "humedad_suelo_max_periodo_m3m3": 0.099,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 20.1,
-      "viento_kmh": 7.0,
+      "temperatura_c": 18.0,
+      "viento_kmh": 5.1,
       "precip_referencia_mm": 1.8,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 11.7,
@@ -78,7 +78,7 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 1.8,
       "hora_pico": "2026-09-23T09:00",
-      "horas_hasta_pico": 15
+      "horas_hasta_pico": 12
     },
     {
       "punto_id": "tratayen_sur",
@@ -95,8 +95,8 @@
       "humedad_suelo_m3m3": 0.092,
       "humedad_suelo_max_periodo_m3m3": 0.12,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 20.3,
-      "viento_kmh": 9.0,
+      "temperatura_c": 17.3,
+      "viento_kmh": 3.7,
       "precip_referencia_mm": 1.7,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 17.4,
@@ -115,7 +115,7 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 1.7,
       "hora_pico": "2026-09-23T02:00",
-      "horas_hasta_pico": 8
+      "horas_hasta_pico": 5
     }
   ],
   "alertas_smn_vigentes_zona": [],
@@ -130,6 +130,6 @@
     "ventana_acumulado_h": 24,
     "ventana_pronostico_h": 24
   },
-  "nivel_anterior": "amarillo",
+  "nivel_anterior": "verde",
   "notificado_a": []
 }
