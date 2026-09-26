@@ -1,6 +1,6 @@
 {
-  "timestamp_local": "2026-09-26T09:48:03",
-  "timestamp_utc": "2026-09-26T12:48:08+00:00",
+  "timestamp_local": "2026-09-26T14:39:57",
+  "timestamp_utc": "2026-09-26T17:40:05+00:00",
   "zona": "Añelo — Vaca Muerta (Neuquén)",
   "nivel_consolidado": "rojo",
   "iie_maximo": 33.0,
@@ -21,8 +21,8 @@
       "humedad_suelo_m3m3": 0.053,
       "humedad_suelo_max_periodo_m3m3": 0.113,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 12.6,
-      "viento_kmh": 3.7,
+      "temperatura_c": 20.9,
+      "viento_kmh": 6.3,
       "precip_referencia_mm": 3.8,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 10.0,
@@ -41,7 +41,7 @@
       "nivel_pronosticado": "amarillo",
       "pico_precip_24h_mm": 5.0,
       "hora_pico": "2026-09-27T19:00",
-      "horas_hasta_pico": 34
+      "horas_hasta_pico": 29
     },
     {
       "punto_id": "acceso_meseta",
@@ -58,8 +58,8 @@
       "humedad_suelo_m3m3": 0.065,
       "humedad_suelo_max_periodo_m3m3": 0.122,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 13.1,
-      "viento_kmh": 6.9,
+      "temperatura_c": 22.1,
+      "viento_kmh": 10.1,
       "precip_referencia_mm": 2.3,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 12.3,
@@ -78,7 +78,7 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 2.8,
       "hora_pico": "2026-09-27T18:00",
-      "horas_hasta_pico": 33
+      "horas_hasta_pico": 28
     },
     {
       "punto_id": "tratayen_sur",
@@ -89,17 +89,17 @@
       "lon": -68.5,
       "elevacion_m": 397.0,
       "precip_acum_24h_mm": 0.0,
-      "precip_acum_72h_mm": 2.0,
+      "precip_acum_72h_mm": 1.8,
       "precip_pron_24h_mm": 7.2,
       "precip_pron_72h_mm": 7.4,
-      "humedad_suelo_m3m3": 0.117,
+      "humedad_suelo_m3m3": 0.114,
       "humedad_suelo_max_periodo_m3m3": 0.205,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 12.8,
-      "viento_kmh": 7.8,
+      "temperatura_c": 20.4,
+      "viento_kmh": 3.8,
       "precip_referencia_mm": 7.2,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
-      "saturacion_suelo_pct": 22.1,
+      "saturacion_suelo_pct": 21.5,
       "porosidad_total_usada": 0.53,
       "alerta_smn_color": "",
       "alerta_smn_cantidad": 0,
@@ -115,7 +115,7 @@
       "nivel_pronosticado": "rojo",
       "pico_precip_24h_mm": 7.2,
       "hora_pico": "2026-09-27T04:00",
-      "horas_hasta_pico": 19
+      "horas_hasta_pico": 14
     }
   ],
   "alertas_smn_vigentes_zona": [],
