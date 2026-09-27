@@ -1,9 +1,9 @@
 {
-  "timestamp_local": "2026-09-27T10:40:25",
-  "timestamp_utc": "2026-09-27T13:40:31+00:00",
+  "timestamp_local": "2026-09-27T15:08:22",
+  "timestamp_utc": "2026-09-27T18:10:35+00:00",
   "zona": "Añelo — Vaca Muerta (Neuquén)",
   "nivel_consolidado": "verde",
-  "iie_maximo": 9.6,
+  "iie_maximo": 8.7,
   "accion_recomendada": "Transitabilidad normal. Sin restricciones.",
   "puntos": [
     {
@@ -14,18 +14,18 @@
       "lat": -38.353,
       "lon": -68.783,
       "elevacion_m": 408.0,
-      "precip_acum_24h_mm": 0.8,
-      "precip_acum_72h_mm": 2.5,
-      "precip_pron_24h_mm": 2.1,
-      "precip_pron_72h_mm": 2.3,
-      "humedad_suelo_m3m3": 0.058,
+      "precip_acum_24h_mm": 1.0,
+      "precip_acum_72h_mm": 2.7,
+      "precip_pron_24h_mm": 1.9,
+      "precip_pron_72h_mm": 2.1,
+      "humedad_suelo_m3m3": 0.06,
       "humedad_suelo_max_periodo_m3m3": 0.091,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 15.9,
-      "viento_kmh": 3.2,
-      "precip_referencia_mm": 2.1,
+      "temperatura_c": 22.3,
+      "viento_kmh": 6.8,
+      "precip_referencia_mm": 1.9,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
-      "saturacion_suelo_pct": 10.9,
+      "saturacion_suelo_pct": 11.3,
       "porosidad_total_usada": 0.53,
       "alerta_smn_color": "",
       "alerta_smn_cantidad": 0,
@@ -35,13 +35,13 @@
         "Sin disparadores. Condiciones normales."
       ],
       "accion_recomendada": "Transitabilidad normal. Sin restricciones.",
-      "iie": 9.6,
-      "subindice_precipitacion": 17.5,
+      "iie": 8.7,
+      "subindice_precipitacion": 15.8,
       "subindice_suelo": 0.0,
       "nivel_pronosticado": "verde",
-      "pico_precip_24h_mm": 2.1,
+      "pico_precip_24h_mm": 1.9,
       "hora_pico": "2026-09-27T19:00",
-      "horas_hasta_pico": 9
+      "horas_hasta_pico": 4
     },
     {
       "punto_id": "acceso_meseta",
@@ -58,8 +58,8 @@
       "humedad_suelo_m3m3": 0.053,
       "humedad_suelo_max_periodo_m3m3": 0.12,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 16.8,
-      "viento_kmh": 4.0,
+      "temperatura_c": 23.5,
+      "viento_kmh": 1.3,
       "precip_referencia_mm": 0.5,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 10.0,
@@ -78,7 +78,7 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 1.2,
       "hora_pico": "2026-09-28T23:00",
-      "horas_hasta_pico": 37
+      "horas_hasta_pico": 32
     },
     {
       "punto_id": "tratayen_sur",
@@ -95,8 +95,8 @@
       "humedad_suelo_m3m3": 0.099,
       "humedad_suelo_max_periodo_m3m3": 0.154,
       "lluvia_actual_mm": 0.0,
-      "temperatura_c": 16.1,
-      "viento_kmh": 3.4,
+      "temperatura_c": 21.9,
+      "viento_kmh": 10.6,
       "precip_referencia_mm": 0.8,
       "criterio_precip_referencia": "max(acumulado 24h, pronóstico 24h)",
       "saturacion_suelo_pct": 18.7,
@@ -115,11 +115,11 @@
       "nivel_pronosticado": "verde",
       "pico_precip_24h_mm": 0.7,
       "hora_pico": "2026-09-27T19:00",
-      "horas_hasta_pico": 9
+      "horas_hasta_pico": 4
     }
   ],
   "alertas_smn_vigentes_zona": [],
-  "avisos_cap_pais": 53,
+  "avisos_cap_pais": 56,
   "puntos_con_error": [],
   "parametros": {
     "porosidad_total_m3m3": 0.53,
