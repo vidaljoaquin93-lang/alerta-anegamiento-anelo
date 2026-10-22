@@ -88,10 +88,10 @@ anelo_pueblo,Añelo Pueblo,2026-10-22T13:00,0.6,0.512,96.6,14.5,16.5,False
 anelo_pueblo,Añelo Pueblo,2026-10-22T14:00,0.3,0.507,95.7,15.5,16.2,False
 anelo_pueblo,Añelo Pueblo,2026-10-22T15:00,0.4,0.507,95.7,14.8,17.0,False
 anelo_pueblo,Añelo Pueblo,2026-10-22T16:00,1.3,0.513,96.8,14.6,16.3,False
-anelo_pueblo,Añelo Pueblo,2026-10-22T17:00,0.2,0.508,95.8,15.7,14.7,True
-anelo_pueblo,Añelo Pueblo,2026-10-22T18:00,0.1,0.503,94.9,15.9,12.6,True
-anelo_pueblo,Añelo Pueblo,2026-10-22T19:00,0.0,0.5,94.3,15.5,11.9,True
-anelo_pueblo,Añelo Pueblo,2026-10-22T20:00,0.0,0.498,94.0,14.2,7.6,True
+anelo_pueblo,Añelo Pueblo,2026-10-22T17:00,0.2,0.508,95.8,15.7,14.7,False
+anelo_pueblo,Añelo Pueblo,2026-10-22T18:00,0.1,0.503,94.9,15.9,12.6,False
+anelo_pueblo,Añelo Pueblo,2026-10-22T19:00,0.0,0.5,94.3,15.5,11.9,False
+anelo_pueblo,Añelo Pueblo,2026-10-22T20:00,0.0,0.498,94.0,14.2,7.6,False
 anelo_pueblo,Añelo Pueblo,2026-10-22T21:00,0.0,0.496,93.6,13.4,6.2,True
 anelo_pueblo,Añelo Pueblo,2026-10-22T22:00,0.0,0.494,93.2,12.5,7.1,True
 anelo_pueblo,Añelo Pueblo,2026-10-22T23:00,0.0,0.493,93.0,11.6,5.9,True
@@ -232,10 +232,10 @@ acceso_meseta,Acceso Meseta,2026-10-22T13:00,0.4,0.508,95.8,15.5,16.1,False
 acceso_meseta,Acceso Meseta,2026-10-22T14:00,0.2,0.501,94.5,16.5,15.1,False
 acceso_meseta,Acceso Meseta,2026-10-22T15:00,0.4,0.5,94.3,15.6,16.2,False
 acceso_meseta,Acceso Meseta,2026-10-22T16:00,3.0,0.507,95.7,15.3,17.1,False
-acceso_meseta,Acceso Meseta,2026-10-22T17:00,0.2,0.503,94.9,16.4,15.9,True
-acceso_meseta,Acceso Meseta,2026-10-22T18:00,0.1,0.499,94.2,16.3,14.1,True
-acceso_meseta,Acceso Meseta,2026-10-22T19:00,0.0,0.496,93.6,16.0,13.0,True
-acceso_meseta,Acceso Meseta,2026-10-22T20:00,0.0,0.494,93.2,14.7,7.0,True
+acceso_meseta,Acceso Meseta,2026-10-22T17:00,0.2,0.503,94.9,16.4,15.9,False
+acceso_meseta,Acceso Meseta,2026-10-22T18:00,0.1,0.499,94.2,16.3,14.1,False
+acceso_meseta,Acceso Meseta,2026-10-22T19:00,0.0,0.496,93.6,16.0,13.0,False
+acceso_meseta,Acceso Meseta,2026-10-22T20:00,0.0,0.494,93.2,14.7,7.0,False
 acceso_meseta,Acceso Meseta,2026-10-22T21:00,0.0,0.492,92.8,13.8,7.2,True
 acceso_meseta,Acceso Meseta,2026-10-22T22:00,0.0,0.491,92.6,12.9,8.2,True
 acceso_meseta,Acceso Meseta,2026-10-22T23:00,0.0,0.489,92.3,12.2,8.7,True
@@ -376,10 +376,10 @@ tratayen_sur,Tratayén / Sector Sur,2026-10-22T13:00,0.5,0.481,90.8,15.0,18.7,Fa
 tratayen_sur,Tratayén / Sector Sur,2026-10-22T14:00,1.2,0.49,92.5,13.9,17.7,False
 tratayen_sur,Tratayén / Sector Sur,2026-10-22T15:00,0.8,0.492,92.8,14.9,19.0,False
 tratayen_sur,Tratayén / Sector Sur,2026-10-22T16:00,0.2,0.486,91.7,16.1,12.6,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-22T17:00,0.0,0.48,90.6,16.1,15.9,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-22T18:00,0.0,0.475,89.6,15.9,15.2,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-22T19:00,0.0,0.471,88.9,15.5,13.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-22T20:00,0.0,0.469,88.5,14.3,9.3,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-22T17:00,0.0,0.48,90.6,16.1,15.9,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-22T18:00,0.0,0.475,89.6,15.9,15.2,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-22T19:00,0.0,0.471,88.9,15.5,13.8,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-22T20:00,0.0,0.469,88.5,14.3,9.3,False
 tratayen_sur,Tratayén / Sector Sur,2026-10-22T21:00,0.0,0.467,88.1,13.3,8.8,True
 tratayen_sur,Tratayén / Sector Sur,2026-10-22T22:00,0.0,0.465,87.7,12.4,7.8,True
 tratayen_sur,Tratayén / Sector Sur,2026-10-22T23:00,0.0,0.463,87.4,11.5,6.3,True
