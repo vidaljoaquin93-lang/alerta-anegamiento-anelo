@@ -1,28 +1,4 @@
 punto_id,punto_nombre,hora,precipitacion_mm,humedad_suelo_m3m3,saturacion_suelo_pct,temperatura_c,viento_kmh,es_pronostico
-anelo_pueblo,Añelo Pueblo,2026-10-20T00:00,0.2,0.478,90.2,13.1,22.7,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T01:00,0.0,0.476,89.8,12.4,20.4,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T02:00,0.0,0.475,89.6,12.0,18.8,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T03:00,0.0,0.473,89.2,12.5,14.1,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T04:00,0.0,0.472,89.1,12.5,13.3,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T05:00,0.0,0.471,88.9,12.0,12.6,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T06:00,0.0,0.47,88.7,11.8,15.3,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T07:00,0.0,0.469,88.5,11.8,16.9,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T08:00,0.0,0.468,88.3,12.9,16.3,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T09:00,0.0,0.467,88.1,12.6,3.1,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T10:00,1.6,0.486,91.7,13.3,9.6,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T11:00,1.2,0.497,93.8,14.0,5.0,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T12:00,0.0,0.491,92.6,15.3,5.8,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T13:00,0.0,0.486,91.7,17.1,9.7,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T14:00,0.0,0.48,90.6,18.5,14.1,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T15:00,0.1,0.477,90.0,17.5,19.5,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T16:00,0.5,0.479,90.4,18.0,13.0,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T17:00,0.2,0.478,90.2,18.2,16.8,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T18:00,0.0,0.475,89.6,17.9,13.8,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T19:00,0.0,0.473,89.2,17.3,6.8,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T20:00,0.0,0.471,88.9,15.3,4.2,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T21:00,0.0,0.49,92.5,13.4,7.5,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T22:00,0.0,0.487,91.9,13.1,8.6,False
-anelo_pueblo,Añelo Pueblo,2026-10-20T23:00,0.0,0.485,91.5,12.7,8.4,False
 anelo_pueblo,Añelo Pueblo,2026-10-21T00:00,0.0,0.483,91.1,12.4,7.2,False
 anelo_pueblo,Añelo Pueblo,2026-10-21T01:00,0.0,0.481,90.8,11.8,6.0,False
 anelo_pueblo,Añelo Pueblo,2026-10-21T02:00,0.0,0.479,90.4,12.0,1.2,False
@@ -86,87 +62,87 @@ anelo_pueblo,Añelo Pueblo,2026-10-23T11:00,0.7,0.496,93.6,12.8,17.2,False
 anelo_pueblo,Añelo Pueblo,2026-10-23T12:00,0.4,0.497,93.8,13.3,11.9,False
 anelo_pueblo,Añelo Pueblo,2026-10-23T13:00,0.4,0.497,93.8,14.7,12.1,False
 anelo_pueblo,Añelo Pueblo,2026-10-23T14:00,1.8,0.513,96.8,13.9,17.6,False
-anelo_pueblo,Añelo Pueblo,2026-10-23T15:00,2.4,0.513,96.8,13.1,8.6,False
-anelo_pueblo,Añelo Pueblo,2026-10-23T16:00,0.4,0.51,96.2,13.6,4.6,False
-anelo_pueblo,Añelo Pueblo,2026-10-23T17:00,0.1,0.504,95.1,14.5,6.9,False
-anelo_pueblo,Añelo Pueblo,2026-10-23T18:00,0.0,0.5,94.3,14.4,9.0,False
-anelo_pueblo,Añelo Pueblo,2026-10-23T19:00,0.0,0.496,93.6,13.7,8.1,False
-anelo_pueblo,Añelo Pueblo,2026-10-23T20:00,0.0,0.494,93.2,11.8,4.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-23T21:00,0.0,0.493,93.0,10.6,4.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-23T22:00,0.0,0.492,92.8,9.7,5.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-23T23:00,0.0,0.491,92.6,9.1,4.6,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T00:00,0.0,0.49,92.5,8.7,2.2,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T01:00,0.0,0.489,92.3,8.3,1.2,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T02:00,0.0,0.488,92.1,8.0,1.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T03:00,0.0,0.488,92.1,7.6,4.1,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T04:00,0.1,0.488,92.1,7.8,4.7,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T05:00,0.1,0.489,92.3,8.7,2.8,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T06:00,0.3,0.49,92.5,9.4,2.6,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T07:00,0.7,0.497,93.8,9.3,3.1,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T08:00,0.3,0.498,94.0,9.9,3.3,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T09:00,0.7,0.503,94.9,10.5,7.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T10:00,0.1,0.501,94.5,12.0,10.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T11:00,0.6,0.504,95.1,12.2,11.2,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T12:00,2.1,0.516,97.4,10.7,16.2,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T13:00,0.3,0.509,96.0,12.7,14.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T14:00,0.2,0.503,94.9,14.5,11.4,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T15:00,0.3,0.5,94.3,15.6,10.9,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T16:00,0.2,0.496,93.6,15.7,10.8,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T17:00,0.2,0.493,93.0,15.5,12.2,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T18:00,0.0,0.49,92.5,15.0,14.3,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T19:00,0.0,0.487,91.9,14.1,14.8,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T20:00,0.0,0.486,91.7,12.4,10.7,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T21:00,0.0,0.485,91.5,11.3,10.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T22:00,0.0,0.484,91.3,10.6,9.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-24T23:00,0.0,0.483,91.1,9.5,7.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T00:00,0.0,0.483,91.1,8.8,6.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T01:00,0.0,0.482,90.9,8.6,5.1,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T02:00,0.0,0.482,90.9,8.4,5.1,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T03:00,0.0,0.481,90.8,8.2,6.8,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T04:00,0.0,0.481,90.8,7.9,8.9,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T05:00,0.0,0.48,90.6,7.3,8.1,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T06:00,0.0,0.48,90.6,7.0,7.8,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T07:00,0.0,0.479,90.4,7.3,9.3,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T08:00,0.0,0.478,90.2,9.9,13.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T09:00,0.0,0.477,90.0,11.8,12.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T10:00,0.0,0.474,89.4,13.3,13.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T11:00,0.0,0.47,88.7,14.8,14.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T12:00,0.0,0.465,87.7,16.1,15.2,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T13:00,0.0,0.46,86.8,16.9,14.8,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T14:00,0.0,0.455,85.8,17.2,14.8,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T15:00,0.0,0.451,85.1,17.7,16.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T16:00,0.0,0.446,84.2,17.8,16.3,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T17:00,0.0,0.442,83.4,18.1,16.5,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T18:00,0.0,0.439,82.8,17.6,17.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T19:00,0.0,0.437,82.5,16.5,16.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T20:00,0.0,0.437,82.5,14.5,12.3,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T21:00,0.0,0.437,82.5,12.9,15.0,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T22:00,0.0,0.437,82.5,12.1,18.7,True
-anelo_pueblo,Añelo Pueblo,2026-10-25T23:00,0.0,0.437,82.5,11.3,22.1,True
-acceso_meseta,Acceso Meseta,2026-10-20T00:00,0.1,0.437,82.5,13.2,18.7,False
-acceso_meseta,Acceso Meseta,2026-10-20T01:00,0.0,0.437,82.5,12.4,16.5,False
-acceso_meseta,Acceso Meseta,2026-10-20T02:00,0.0,0.437,82.5,12.1,16.0,False
-acceso_meseta,Acceso Meseta,2026-10-20T03:00,0.0,0.437,82.5,12.4,12.2,False
-acceso_meseta,Acceso Meseta,2026-10-20T04:00,0.0,0.436,82.3,12.7,16.1,False
-acceso_meseta,Acceso Meseta,2026-10-20T05:00,0.0,0.436,82.3,12.1,13.2,False
-acceso_meseta,Acceso Meseta,2026-10-20T06:00,0.1,0.437,82.5,11.9,14.2,False
-acceso_meseta,Acceso Meseta,2026-10-20T07:00,0.0,0.437,82.5,11.8,14.8,False
-acceso_meseta,Acceso Meseta,2026-10-20T08:00,0.1,0.438,82.6,12.8,14.3,False
-acceso_meseta,Acceso Meseta,2026-10-20T09:00,0.0,0.434,81.9,12.5,4.8,False
-acceso_meseta,Acceso Meseta,2026-10-20T10:00,1.5,0.454,85.7,13.5,7.4,False
-acceso_meseta,Acceso Meseta,2026-10-20T11:00,2.2,0.481,90.8,14.4,2.5,False
-acceso_meseta,Acceso Meseta,2026-10-20T12:00,0.0,0.478,90.2,16.0,7.3,False
-acceso_meseta,Acceso Meseta,2026-10-20T13:00,0.0,0.473,89.2,17.6,13.2,False
-acceso_meseta,Acceso Meseta,2026-10-20T14:00,0.0,0.467,88.1,18.5,16.5,False
-acceso_meseta,Acceso Meseta,2026-10-20T15:00,0.1,0.47,88.7,18.5,18.7,False
-acceso_meseta,Acceso Meseta,2026-10-20T16:00,0.2,0.468,88.3,18.8,14.2,False
-acceso_meseta,Acceso Meseta,2026-10-20T17:00,0.2,0.468,88.3,18.9,15.5,False
-acceso_meseta,Acceso Meseta,2026-10-20T18:00,0.0,0.465,87.7,18.6,10.6,False
-acceso_meseta,Acceso Meseta,2026-10-20T19:00,0.0,0.463,87.4,18.0,3.7,False
-acceso_meseta,Acceso Meseta,2026-10-20T20:00,0.0,0.462,87.2,16.2,0.7,False
-acceso_meseta,Acceso Meseta,2026-10-20T21:00,0.0,0.469,88.5,14.0,6.5,False
-acceso_meseta,Acceso Meseta,2026-10-20T22:00,0.0,0.468,88.3,13.6,6.5,False
-acceso_meseta,Acceso Meseta,2026-10-20T23:00,0.1,0.467,88.1,13.2,5.8,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T15:00,2.4,0.507,95.7,12.1,5.6,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T16:00,0.4,0.505,95.3,12.6,5.9,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T17:00,0.0,0.5,94.3,13.2,9.5,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T18:00,0.0,0.496,93.6,12.7,9.0,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T19:00,0.0,0.493,93.0,12.2,7.8,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T20:00,0.0,0.491,92.6,10.8,4.9,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T21:00,0.0,0.49,92.5,9.6,5.1,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T22:00,0.0,0.489,92.3,8.9,5.0,False
+anelo_pueblo,Añelo Pueblo,2026-10-23T23:00,0.0,0.488,92.1,8.7,1.4,False
+anelo_pueblo,Añelo Pueblo,2026-10-24T00:00,0.0,0.487,91.9,8.7,0.7,False
+anelo_pueblo,Añelo Pueblo,2026-10-24T01:00,0.0,0.486,91.7,8.2,1.6,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T02:00,0.0,0.485,91.5,8.1,1.7,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T03:00,0.0,0.484,91.3,7.8,0.9,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T04:00,0.0,0.483,91.1,7.5,1.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T05:00,0.0,0.483,91.1,7.3,2.3,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T06:00,0.0,0.482,90.9,7.2,3.0,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T07:00,0.1,0.483,91.1,7.2,3.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T08:00,0.5,0.488,92.1,9.2,2.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T09:00,0.2,0.489,92.3,10.8,2.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T10:00,0.0,0.486,91.7,12.3,4.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T11:00,0.1,0.484,91.3,13.2,6.7,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T12:00,1.3,0.497,93.8,11.7,12.9,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T13:00,1.6,0.51,96.2,12.8,17.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T14:00,0.2,0.503,94.9,13.1,14.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T15:00,0.0,0.496,93.6,15.1,12.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T16:00,0.0,0.49,92.5,15.6,11.4,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T17:00,0.0,0.485,91.5,15.6,12.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T18:00,0.0,0.481,90.8,15.0,15.7,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T19:00,0.0,0.479,90.4,13.6,16.6,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T20:00,0.0,0.478,90.2,11.8,12.3,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T21:00,0.0,0.477,90.0,10.6,10.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T22:00,0.0,0.476,89.8,10.0,7.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-24T23:00,0.0,0.476,89.8,9.1,5.3,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T00:00,0.0,0.475,89.6,8.9,4.0,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T01:00,0.0,0.475,89.6,8.1,4.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T02:00,0.0,0.475,89.6,7.7,5.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T03:00,0.0,0.474,89.4,7.6,7.0,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T04:00,0.0,0.474,89.4,7.0,8.1,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T05:00,0.0,0.473,89.2,6.9,8.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T06:00,0.0,0.473,89.2,6.8,9.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T07:00,0.0,0.472,89.1,6.9,9.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T08:00,0.0,0.472,89.1,9.2,10.9,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T09:00,0.0,0.47,88.7,11.4,11.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T10:00,0.0,0.468,88.3,13.1,12.7,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T11:00,0.0,0.464,87.5,14.4,13.1,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T12:00,0.0,0.458,86.4,15.6,14.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T13:00,0.0,0.453,85.5,16.7,16.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T14:00,0.0,0.447,84.3,17.4,18.4,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T15:00,0.0,0.441,83.2,17.8,18.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T16:00,0.0,0.436,82.3,17.9,18.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T17:00,0.0,0.432,81.5,17.4,18.9,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T18:00,0.0,0.429,80.9,17.3,19.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T19:00,0.0,0.427,80.6,16.2,18.7,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T20:00,0.0,0.426,80.4,14.0,16.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T21:00,0.0,0.426,80.4,12.6,17.4,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T22:00,0.0,0.426,80.4,11.9,19.0,True
+anelo_pueblo,Añelo Pueblo,2026-10-25T23:00,0.0,0.426,80.4,11.0,20.4,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T00:00,0.0,0.426,80.4,10.6,22.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T01:00,0.0,0.426,80.4,10.4,25.6,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T02:00,0.0,0.426,80.4,10.0,27.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T03:00,0.0,0.426,80.4,9.5,24.4,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T04:00,0.0,0.426,80.4,9.3,22.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T05:00,0.0,0.426,80.4,9.2,22.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T06:00,0.0,0.426,80.4,9.0,20.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T07:00,0.0,0.427,80.6,8.8,18.6,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T08:00,0.0,0.426,80.4,10.1,21.2,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T09:00,0.0,0.425,80.2,11.8,22.3,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T10:00,0.0,0.424,80.0,12.5,19.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T11:00,0.0,0.422,79.6,13.7,17.0,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T12:00,0.0,0.418,78.9,16.6,16.4,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T13:00,0.0,0.414,78.1,17.3,15.5,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T14:00,0.0,0.41,77.4,17.4,12.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T15:00,0.0,0.407,76.8,17.6,8.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T16:00,0.0,0.405,76.4,17.9,6.1,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T17:00,0.0,0.404,76.2,17.8,4.8,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T18:00,0.0,0.403,76.0,17.6,7.1,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T19:00,0.0,0.402,75.8,17.0,7.3,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T20:00,0.0,0.402,75.8,15.3,5.4,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T21:00,0.0,0.403,76.0,14.2,3.7,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T22:00,0.0,0.403,76.0,13.2,4.7,True
+anelo_pueblo,Añelo Pueblo,2026-10-26T23:00,0.0,0.404,76.2,12.7,4.6,True
 acceso_meseta,Acceso Meseta,2026-10-21T00:00,0.1,0.467,88.1,12.9,8.3,False
 acceso_meseta,Acceso Meseta,2026-10-21T01:00,0.0,0.466,87.9,12.4,6.9,False
 acceso_meseta,Acceso Meseta,2026-10-21T02:00,0.0,0.465,87.7,12.4,4.2,False
@@ -230,87 +206,87 @@ acceso_meseta,Acceso Meseta,2026-10-23T11:00,0.9,0.502,94.7,13.1,14.7,False
 acceso_meseta,Acceso Meseta,2026-10-23T12:00,0.3,0.499,94.2,13.9,10.2,False
 acceso_meseta,Acceso Meseta,2026-10-23T13:00,0.5,0.499,94.2,14.7,14.6,False
 acceso_meseta,Acceso Meseta,2026-10-23T14:00,1.1,0.505,95.3,14.1,16.6,False
-acceso_meseta,Acceso Meseta,2026-10-23T15:00,1.0,0.508,95.8,13.5,7.1,False
-acceso_meseta,Acceso Meseta,2026-10-23T16:00,0.2,0.503,94.9,14.3,3.0,False
-acceso_meseta,Acceso Meseta,2026-10-23T17:00,0.0,0.497,93.8,15.4,6.5,False
-acceso_meseta,Acceso Meseta,2026-10-23T18:00,0.0,0.492,92.8,15.4,8.1,False
-acceso_meseta,Acceso Meseta,2026-10-23T19:00,0.0,0.489,92.3,14.6,8.9,False
-acceso_meseta,Acceso Meseta,2026-10-23T20:00,0.0,0.487,91.9,12.5,5.1,True
-acceso_meseta,Acceso Meseta,2026-10-23T21:00,0.0,0.485,91.5,11.3,4.3,True
-acceso_meseta,Acceso Meseta,2026-10-23T22:00,0.0,0.484,91.3,10.4,5.2,True
-acceso_meseta,Acceso Meseta,2026-10-23T23:00,0.0,0.483,91.1,9.8,5.4,True
-acceso_meseta,Acceso Meseta,2026-10-24T00:00,0.0,0.482,90.9,9.3,3.6,True
-acceso_meseta,Acceso Meseta,2026-10-24T01:00,0.0,0.481,90.8,8.8,3.0,True
-acceso_meseta,Acceso Meseta,2026-10-24T02:00,0.0,0.48,90.6,8.5,3.1,True
-acceso_meseta,Acceso Meseta,2026-10-24T03:00,0.0,0.479,90.4,8.3,4.3,True
-acceso_meseta,Acceso Meseta,2026-10-24T04:00,0.2,0.481,90.8,8.2,3.8,True
-acceso_meseta,Acceso Meseta,2026-10-24T05:00,0.1,0.481,90.8,9.0,2.9,True
-acceso_meseta,Acceso Meseta,2026-10-24T06:00,0.3,0.483,91.1,9.6,3.4,True
-acceso_meseta,Acceso Meseta,2026-10-24T07:00,0.5,0.488,92.1,9.7,5.6,True
-acceso_meseta,Acceso Meseta,2026-10-24T08:00,0.2,0.489,92.3,10.3,6.9,True
-acceso_meseta,Acceso Meseta,2026-10-24T09:00,0.1,0.488,92.1,10.9,9.9,True
-acceso_meseta,Acceso Meseta,2026-10-24T10:00,0.1,0.486,91.7,12.3,12.5,True
-acceso_meseta,Acceso Meseta,2026-10-24T11:00,0.1,0.485,91.5,12.8,13.8,True
-acceso_meseta,Acceso Meseta,2026-10-24T12:00,2.1,0.506,95.5,11.8,18.0,True
-acceso_meseta,Acceso Meseta,2026-10-24T13:00,0.4,0.503,94.9,13.2,16.0,True
-acceso_meseta,Acceso Meseta,2026-10-24T14:00,0.0,0.495,93.4,15.0,12.4,True
-acceso_meseta,Acceso Meseta,2026-10-24T15:00,0.1,0.49,92.5,16.1,9.7,True
-acceso_meseta,Acceso Meseta,2026-10-24T16:00,0.1,0.485,91.5,16.5,8.6,True
-acceso_meseta,Acceso Meseta,2026-10-24T17:00,0.0,0.481,90.8,16.5,10.0,True
-acceso_meseta,Acceso Meseta,2026-10-24T18:00,0.0,0.478,90.2,16.0,12.7,True
-acceso_meseta,Acceso Meseta,2026-10-24T19:00,0.0,0.476,89.8,14.8,15.4,True
-acceso_meseta,Acceso Meseta,2026-10-24T20:00,0.0,0.475,89.6,13.0,11.3,True
-acceso_meseta,Acceso Meseta,2026-10-24T21:00,0.0,0.474,89.4,11.8,10.0,True
-acceso_meseta,Acceso Meseta,2026-10-24T22:00,0.0,0.473,89.2,11.1,8.0,True
-acceso_meseta,Acceso Meseta,2026-10-24T23:00,0.0,0.473,89.2,10.0,7.0,True
-acceso_meseta,Acceso Meseta,2026-10-25T00:00,0.0,0.472,89.1,9.5,6.9,True
-acceso_meseta,Acceso Meseta,2026-10-25T01:00,0.0,0.472,89.1,9.4,6.9,True
-acceso_meseta,Acceso Meseta,2026-10-25T02:00,0.0,0.471,88.9,9.4,8.5,True
-acceso_meseta,Acceso Meseta,2026-10-25T03:00,0.0,0.471,88.9,9.2,12.1,True
-acceso_meseta,Acceso Meseta,2026-10-25T04:00,0.0,0.47,88.7,8.6,13.0,True
-acceso_meseta,Acceso Meseta,2026-10-25T05:00,0.0,0.469,88.5,8.0,11.0,True
-acceso_meseta,Acceso Meseta,2026-10-25T06:00,0.0,0.469,88.5,7.8,10.7,True
-acceso_meseta,Acceso Meseta,2026-10-25T07:00,0.0,0.469,88.5,8.0,11.8,True
-acceso_meseta,Acceso Meseta,2026-10-25T08:00,0.0,0.468,88.3,10.1,15.3,True
-acceso_meseta,Acceso Meseta,2026-10-25T09:00,0.0,0.466,87.9,11.7,14.5,True
-acceso_meseta,Acceso Meseta,2026-10-25T10:00,0.0,0.463,87.4,13.1,13.4,True
-acceso_meseta,Acceso Meseta,2026-10-25T11:00,0.0,0.459,86.6,14.4,13.5,True
-acceso_meseta,Acceso Meseta,2026-10-25T12:00,0.0,0.455,85.8,16.1,15.4,True
-acceso_meseta,Acceso Meseta,2026-10-25T13:00,0.0,0.449,84.7,17.2,16.1,True
-acceso_meseta,Acceso Meseta,2026-10-25T14:00,0.0,0.444,83.8,17.5,16.7,True
-acceso_meseta,Acceso Meseta,2026-10-25T15:00,0.0,0.44,83.0,17.9,17.3,True
-acceso_meseta,Acceso Meseta,2026-10-25T16:00,0.0,0.436,82.3,18.0,16.7,True
-acceso_meseta,Acceso Meseta,2026-10-25T17:00,0.0,0.432,81.5,18.3,17.8,True
-acceso_meseta,Acceso Meseta,2026-10-25T18:00,0.0,0.428,80.8,17.9,19.2,True
-acceso_meseta,Acceso Meseta,2026-10-25T19:00,0.0,0.427,80.6,16.9,17.0,True
-acceso_meseta,Acceso Meseta,2026-10-25T20:00,0.0,0.426,80.4,15.0,15.6,True
-acceso_meseta,Acceso Meseta,2026-10-25T21:00,0.0,0.426,80.4,13.5,18.7,True
-acceso_meseta,Acceso Meseta,2026-10-25T22:00,0.0,0.425,80.2,12.6,22.5,True
-acceso_meseta,Acceso Meseta,2026-10-25T23:00,0.0,0.425,80.2,11.7,24.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T00:00,0.0,0.383,72.3,13.7,24.7,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T01:00,0.0,0.383,72.3,13.5,23.6,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T02:00,0.0,0.383,72.3,13.2,17.7,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T03:00,0.0,0.388,73.2,12.2,6.2,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T04:00,0.0,0.388,73.2,12.3,6.9,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T05:00,0.0,0.388,73.2,12.5,8.2,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T06:00,0.0,0.388,73.2,12.7,12.7,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T07:00,0.0,0.388,73.2,12.8,18.0,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T08:00,0.0,0.388,73.2,14.0,16.2,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T09:00,0.0,0.401,75.7,13.9,1.5,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T10:00,0.3,0.405,76.4,14.7,3.4,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T11:00,0.1,0.404,76.2,16.1,11.0,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T12:00,0.0,0.403,76.0,16.4,2.3,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T13:00,0.0,0.401,75.7,17.6,5.6,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T14:00,0.0,0.397,74.9,19.1,11.9,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T15:00,0.1,0.401,75.7,19.0,18.9,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T16:00,0.5,0.404,76.2,18.6,16.4,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T17:00,0.4,0.408,77.0,18.2,14.9,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T18:00,0.2,0.408,77.0,17.6,15.4,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T19:00,0.1,0.409,77.2,17.0,12.4,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T20:00,0.0,0.409,77.2,15.9,10.0,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T21:00,0.0,0.427,80.6,14.0,8.5,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T22:00,0.0,0.427,80.6,13.5,6.9,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-20T23:00,0.0,0.427,80.6,13.7,8.4,False
+acceso_meseta,Acceso Meseta,2026-10-23T15:00,1.0,0.508,95.8,12.7,3.6,False
+acceso_meseta,Acceso Meseta,2026-10-23T16:00,0.1,0.502,94.7,13.5,5.6,False
+acceso_meseta,Acceso Meseta,2026-10-23T17:00,0.0,0.496,93.6,14.2,8.7,False
+acceso_meseta,Acceso Meseta,2026-10-23T18:00,0.0,0.492,92.8,13.7,9.1,False
+acceso_meseta,Acceso Meseta,2026-10-23T19:00,0.0,0.489,92.3,12.9,10.3,False
+acceso_meseta,Acceso Meseta,2026-10-23T20:00,0.0,0.487,91.9,11.3,5.6,False
+acceso_meseta,Acceso Meseta,2026-10-23T21:00,0.0,0.486,91.7,10.2,4.6,False
+acceso_meseta,Acceso Meseta,2026-10-23T22:00,0.0,0.484,91.3,9.4,4.8,False
+acceso_meseta,Acceso Meseta,2026-10-23T23:00,0.0,0.483,91.1,9.0,3.1,False
+acceso_meseta,Acceso Meseta,2026-10-24T00:00,0.0,0.482,90.9,8.9,1.8,False
+acceso_meseta,Acceso Meseta,2026-10-24T01:00,0.0,0.481,90.8,8.4,3.3,True
+acceso_meseta,Acceso Meseta,2026-10-24T02:00,0.0,0.48,90.6,8.1,3.9,True
+acceso_meseta,Acceso Meseta,2026-10-24T03:00,0.0,0.479,90.4,7.7,2.3,True
+acceso_meseta,Acceso Meseta,2026-10-24T04:00,0.0,0.479,90.4,7.5,1.7,True
+acceso_meseta,Acceso Meseta,2026-10-24T05:00,0.0,0.478,90.2,7.2,2.2,True
+acceso_meseta,Acceso Meseta,2026-10-24T06:00,0.0,0.477,90.0,7.2,2.1,True
+acceso_meseta,Acceso Meseta,2026-10-24T07:00,0.0,0.477,90.0,7.3,2.3,True
+acceso_meseta,Acceso Meseta,2026-10-24T08:00,0.3,0.479,90.4,9.2,2.8,True
+acceso_meseta,Acceso Meseta,2026-10-24T09:00,0.1,0.48,90.6,10.9,2.7,True
+acceso_meseta,Acceso Meseta,2026-10-24T10:00,0.0,0.478,90.2,12.7,4.8,True
+acceso_meseta,Acceso Meseta,2026-10-24T11:00,0.1,0.475,89.6,13.7,4.3,True
+acceso_meseta,Acceso Meseta,2026-10-24T12:00,0.1,0.474,89.4,13.8,6.5,True
+acceso_meseta,Acceso Meseta,2026-10-24T13:00,2.0,0.494,93.2,13.3,18.9,True
+acceso_meseta,Acceso Meseta,2026-10-24T14:00,0.5,0.495,93.4,13.9,16.9,True
+acceso_meseta,Acceso Meseta,2026-10-24T15:00,0.0,0.488,92.1,15.6,13.1,True
+acceso_meseta,Acceso Meseta,2026-10-24T16:00,0.0,0.482,90.9,16.1,10.9,True
+acceso_meseta,Acceso Meseta,2026-10-24T17:00,0.0,0.478,90.2,16.1,11.1,True
+acceso_meseta,Acceso Meseta,2026-10-24T18:00,0.1,0.476,89.8,15.8,13.7,True
+acceso_meseta,Acceso Meseta,2026-10-24T19:00,0.0,0.474,89.4,14.4,16.5,True
+acceso_meseta,Acceso Meseta,2026-10-24T20:00,0.0,0.472,89.1,12.4,13.5,True
+acceso_meseta,Acceso Meseta,2026-10-24T21:00,0.0,0.471,88.9,11.4,11.9,True
+acceso_meseta,Acceso Meseta,2026-10-24T22:00,0.0,0.47,88.7,10.5,9.5,True
+acceso_meseta,Acceso Meseta,2026-10-24T23:00,0.0,0.47,88.7,9.8,5.9,True
+acceso_meseta,Acceso Meseta,2026-10-25T00:00,0.0,0.469,88.5,9.4,4.2,True
+acceso_meseta,Acceso Meseta,2026-10-25T01:00,0.0,0.469,88.5,8.9,4.6,True
+acceso_meseta,Acceso Meseta,2026-10-25T02:00,0.0,0.469,88.5,8.5,6.7,True
+acceso_meseta,Acceso Meseta,2026-10-25T03:00,0.0,0.468,88.3,8.5,10.0,True
+acceso_meseta,Acceso Meseta,2026-10-25T04:00,0.0,0.468,88.3,8.0,11.4,True
+acceso_meseta,Acceso Meseta,2026-10-25T05:00,0.0,0.467,88.1,7.7,11.8,True
+acceso_meseta,Acceso Meseta,2026-10-25T06:00,0.0,0.467,88.1,7.5,11.5,True
+acceso_meseta,Acceso Meseta,2026-10-25T07:00,0.0,0.466,87.9,7.6,11.8,True
+acceso_meseta,Acceso Meseta,2026-10-25T08:00,0.0,0.465,87.7,9.7,13.8,True
+acceso_meseta,Acceso Meseta,2026-10-25T09:00,0.0,0.464,87.5,11.4,13.9,True
+acceso_meseta,Acceso Meseta,2026-10-25T10:00,0.0,0.461,87.0,12.8,13.2,True
+acceso_meseta,Acceso Meseta,2026-10-25T11:00,0.0,0.457,86.2,14.1,13.2,True
+acceso_meseta,Acceso Meseta,2026-10-25T12:00,0.0,0.452,85.3,15.5,14.4,True
+acceso_meseta,Acceso Meseta,2026-10-25T13:00,0.0,0.446,84.2,16.7,16.9,True
+acceso_meseta,Acceso Meseta,2026-10-25T14:00,0.0,0.44,83.0,17.5,18.8,True
+acceso_meseta,Acceso Meseta,2026-10-25T15:00,0.0,0.434,81.9,18.0,18.8,True
+acceso_meseta,Acceso Meseta,2026-10-25T16:00,0.0,0.429,80.9,18.0,18.4,True
+acceso_meseta,Acceso Meseta,2026-10-25T17:00,0.0,0.425,80.2,17.8,19.2,True
+acceso_meseta,Acceso Meseta,2026-10-25T18:00,0.0,0.422,79.6,17.8,21.3,True
+acceso_meseta,Acceso Meseta,2026-10-25T19:00,0.0,0.42,79.2,16.7,20.4,True
+acceso_meseta,Acceso Meseta,2026-10-25T20:00,0.0,0.419,79.1,14.5,19.9,True
+acceso_meseta,Acceso Meseta,2026-10-25T21:00,0.0,0.419,79.1,13.2,21.3,True
+acceso_meseta,Acceso Meseta,2026-10-25T22:00,0.0,0.418,78.9,12.2,21.2,True
+acceso_meseta,Acceso Meseta,2026-10-25T23:00,0.0,0.418,78.9,11.5,23.3,True
+acceso_meseta,Acceso Meseta,2026-10-26T00:00,0.0,0.418,78.9,11.0,26.7,True
+acceso_meseta,Acceso Meseta,2026-10-26T01:00,0.0,0.418,78.9,10.7,30.0,True
+acceso_meseta,Acceso Meseta,2026-10-26T02:00,0.0,0.418,78.9,10.3,29.9,True
+acceso_meseta,Acceso Meseta,2026-10-26T03:00,0.0,0.418,78.9,9.8,26.6,True
+acceso_meseta,Acceso Meseta,2026-10-26T04:00,0.0,0.418,78.9,9.6,26.3,True
+acceso_meseta,Acceso Meseta,2026-10-26T05:00,0.0,0.418,78.9,9.5,26.2,True
+acceso_meseta,Acceso Meseta,2026-10-26T06:00,0.0,0.418,78.9,9.2,24.8,True
+acceso_meseta,Acceso Meseta,2026-10-26T07:00,0.0,0.418,78.9,9.1,23.2,True
+acceso_meseta,Acceso Meseta,2026-10-26T08:00,0.0,0.417,78.7,10.3,22.7,True
+acceso_meseta,Acceso Meseta,2026-10-26T09:00,0.0,0.417,78.7,12.0,22.1,True
+acceso_meseta,Acceso Meseta,2026-10-26T10:00,0.0,0.415,78.3,12.7,17.7,True
+acceso_meseta,Acceso Meseta,2026-10-26T11:00,0.0,0.413,77.9,14.0,16.4,True
+acceso_meseta,Acceso Meseta,2026-10-26T12:00,0.0,0.409,77.2,16.2,15.2,True
+acceso_meseta,Acceso Meseta,2026-10-26T13:00,0.0,0.405,76.4,17.0,12.5,True
+acceso_meseta,Acceso Meseta,2026-10-26T14:00,0.0,0.401,75.7,17.3,9.1,True
+acceso_meseta,Acceso Meseta,2026-10-26T15:00,0.0,0.398,75.1,17.6,5.2,True
+acceso_meseta,Acceso Meseta,2026-10-26T16:00,0.0,0.396,74.7,18.1,5.7,True
+acceso_meseta,Acceso Meseta,2026-10-26T17:00,0.0,0.395,74.5,17.9,6.5,True
+acceso_meseta,Acceso Meseta,2026-10-26T18:00,0.0,0.394,74.3,17.7,7.6,True
+acceso_meseta,Acceso Meseta,2026-10-26T19:00,0.0,0.393,74.2,17.3,6.8,True
+acceso_meseta,Acceso Meseta,2026-10-26T20:00,0.0,0.393,74.2,15.7,4.5,True
+acceso_meseta,Acceso Meseta,2026-10-26T21:00,0.0,0.394,74.3,14.9,2.3,True
+acceso_meseta,Acceso Meseta,2026-10-26T22:00,0.0,0.394,74.3,14.0,2.9,True
+acceso_meseta,Acceso Meseta,2026-10-26T23:00,0.0,0.395,74.5,13.3,3.7,True
 tratayen_sur,Tratayén / Sector Sur,2026-10-21T00:00,0.0,0.427,80.6,13.5,6.7,False
 tratayen_sur,Tratayén / Sector Sur,2026-10-21T01:00,0.0,0.427,80.6,12.8,3.2,False
 tratayen_sur,Tratayén / Sector Sur,2026-10-21T02:00,0.0,0.426,80.4,12.8,4.2,False
@@ -374,60 +350,84 @@ tratayen_sur,Tratayén / Sector Sur,2026-10-23T11:00,0.3,0.458,86.4,13.7,8.1,Fal
 tratayen_sur,Tratayén / Sector Sur,2026-10-23T12:00,0.6,0.462,87.2,14.3,5.8,False
 tratayen_sur,Tratayén / Sector Sur,2026-10-23T13:00,0.3,0.462,87.2,14.7,2.9,False
 tratayen_sur,Tratayén / Sector Sur,2026-10-23T14:00,0.2,0.461,87.0,15.0,6.4,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T15:00,3.2,0.5,94.3,13.7,15.1,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T16:00,2.9,0.512,96.6,13.2,11.1,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T17:00,0.4,0.502,94.7,13.9,4.7,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T18:00,0.1,0.494,93.2,13.9,8.9,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T19:00,0.0,0.489,92.3,13.7,5.1,False
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T20:00,0.1,0.486,91.7,12.3,3.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T21:00,0.1,0.484,91.3,11.5,5.6,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T22:00,0.0,0.481,90.8,10.7,5.2,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-23T23:00,0.0,0.479,90.4,9.9,5.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T00:00,0.0,0.477,90.0,9.2,4.9,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T01:00,0.0,0.475,89.6,9.3,5.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T02:00,0.0,0.474,89.4,9.3,5.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T03:00,0.0,0.473,89.2,9.6,5.0,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T04:00,0.0,0.472,89.1,10.0,4.5,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T05:00,0.1,0.471,88.9,9.9,5.1,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T06:00,0.1,0.471,88.9,9.7,6.1,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T07:00,0.3,0.473,89.2,9.9,9.6,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T08:00,0.5,0.477,90.0,10.4,11.6,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T09:00,0.7,0.484,91.3,10.4,15.3,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T10:00,0.5,0.487,91.9,10.5,17.7,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T11:00,0.1,0.484,91.3,11.9,15.1,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T12:00,0.0,0.48,90.6,12.2,12.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T13:00,0.0,0.477,90.0,13.1,11.0,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T14:00,0.0,0.473,89.2,14.0,11.2,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T15:00,0.0,0.468,88.3,14.8,12.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T16:00,0.0,0.463,87.4,15.3,12.9,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T17:00,0.0,0.458,86.4,15.1,13.3,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T18:00,0.0,0.456,86.0,14.6,14.6,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T19:00,0.0,0.454,85.7,13.8,14.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T20:00,0.0,0.452,85.3,12.4,11.2,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T21:00,0.0,0.452,85.3,11.4,10.1,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T22:00,0.0,0.451,85.1,10.7,10.5,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-24T23:00,0.0,0.451,85.1,10.0,9.9,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T00:00,0.0,0.45,84.9,9.6,8.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T01:00,0.0,0.45,84.9,8.9,6.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T02:00,0.0,0.449,84.7,8.4,5.9,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T03:00,0.0,0.449,84.7,8.2,6.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T04:00,0.0,0.449,84.7,7.7,7.7,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T05:00,0.0,0.448,84.5,7.2,7.1,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T06:00,0.0,0.448,84.5,7.1,6.3,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T07:00,0.0,0.448,84.5,8.0,6.6,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T08:00,0.0,0.447,84.3,9.8,6.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T09:00,0.0,0.446,84.2,12.3,1.5,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T10:00,0.0,0.443,83.6,13.7,2.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T11:00,0.0,0.439,82.8,15.4,3.5,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T12:00,0.0,0.435,82.1,16.6,5.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T13:00,0.0,0.429,80.9,17.5,6.9,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T14:00,0.0,0.424,80.0,18.2,9.2,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T15:00,0.0,0.418,78.9,18.7,10.8,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T16:00,0.0,0.413,77.9,18.8,11.0,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T17:00,0.0,0.408,77.0,18.8,11.9,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T18:00,0.0,0.405,76.4,18.3,14.2,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T19:00,0.0,0.403,76.0,17.0,14.1,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T20:00,0.0,0.402,75.8,14.7,9.4,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T21:00,0.0,0.401,75.7,13.2,14.0,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T22:00,0.0,0.401,75.7,12.5,16.6,True
-tratayen_sur,Tratayén / Sector Sur,2026-10-25T23:00,0.0,0.401,75.7,11.9,18.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T15:00,3.2,0.523,98.7,12.5,22.4,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T16:00,2.2,0.51,96.2,12.6,10.1,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T17:00,0.3,0.501,94.5,12.8,3.1,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T18:00,0.1,0.496,93.6,12.9,1.4,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T19:00,0.1,0.492,92.8,12.6,3.0,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T20:00,0.0,0.489,92.3,11.9,3.2,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T21:00,0.0,0.485,91.5,11.0,5.2,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T22:00,0.0,0.483,91.1,10.3,7.9,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-23T23:00,0.0,0.481,90.8,9.4,7.3,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T00:00,0.0,0.479,90.4,8.6,4.7,False
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T01:00,0.0,0.477,90.0,8.6,0.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T02:00,0.0,0.476,89.8,8.4,1.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T03:00,0.0,0.475,89.6,8.9,0.6,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T04:00,0.0,0.473,89.2,8.8,4.8,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T05:00,0.0,0.472,89.1,8.7,6.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T06:00,0.0,0.471,88.9,8.4,5.3,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T07:00,0.1,0.472,89.1,8.6,3.6,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T08:00,1.0,0.482,90.9,9.9,3.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T09:00,1.5,0.499,94.2,10.2,6.6,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T10:00,0.7,0.501,94.5,10.5,15.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T11:00,1.2,0.507,95.7,10.3,17.9,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T12:00,0.8,0.506,95.5,10.1,14.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T13:00,0.2,0.5,94.3,11.2,15.6,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T14:00,0.0,0.493,93.0,12.4,14.8,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T15:00,0.0,0.487,91.9,14.5,12.0,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T16:00,0.0,0.481,90.8,15.0,12.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T17:00,0.0,0.476,89.8,14.7,15.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T18:00,0.0,0.473,89.2,14.0,16.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T19:00,0.0,0.47,88.7,13.0,15.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T20:00,0.0,0.469,88.5,11.6,9.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T21:00,0.0,0.468,88.3,10.6,6.0,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T22:00,0.0,0.467,88.1,10.1,4.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-24T23:00,0.0,0.467,88.1,9.8,2.3,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T00:00,0.0,0.466,87.9,9.0,3.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T01:00,0.0,0.466,87.9,8.1,5.6,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T02:00,0.0,0.465,87.7,7.8,8.9,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T03:00,0.0,0.464,87.5,7.7,10.6,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T04:00,0.0,0.464,87.5,7.2,9.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T05:00,0.0,0.463,87.4,6.6,7.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T06:00,0.0,0.463,87.4,6.0,5.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T07:00,0.0,0.462,87.2,6.1,4.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T08:00,0.0,0.462,87.2,8.8,3.8,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T09:00,0.0,0.46,86.8,11.4,4.2,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T10:00,0.0,0.458,86.4,12.8,5.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T11:00,0.0,0.454,85.7,14.3,4.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T12:00,0.0,0.449,84.7,16.1,4.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T13:00,0.0,0.443,83.6,17.8,7.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T14:00,0.0,0.437,82.5,18.4,11.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T15:00,0.0,0.431,81.3,18.3,14.0,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T16:00,0.0,0.426,80.4,18.8,11.3,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T17:00,0.0,0.422,79.6,18.6,12.8,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T18:00,0.0,0.419,79.1,17.6,16.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T19:00,0.0,0.417,78.7,16.6,14.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T20:00,0.0,0.416,78.5,14.4,12.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T21:00,0.0,0.416,78.5,12.8,14.0,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T22:00,0.0,0.416,78.5,11.8,13.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-25T23:00,0.0,0.416,78.5,11.4,15.3,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T00:00,0.0,0.415,78.3,11.1,18.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T01:00,0.0,0.415,78.3,10.9,20.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T02:00,0.0,0.415,78.3,10.6,22.8,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T03:00,0.0,0.415,78.3,10.1,21.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T04:00,0.0,0.415,78.3,9.9,18.2,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T05:00,0.0,0.415,78.3,9.9,16.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T06:00,0.0,0.415,78.3,9.7,14.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T07:00,0.0,0.415,78.3,9.6,12.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T08:00,0.0,0.414,78.1,11.4,18.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T09:00,0.0,0.413,77.9,12.8,18.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T10:00,0.0,0.411,77.5,13.8,17.1,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T11:00,0.0,0.409,77.2,14.3,17.2,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T12:00,0.0,0.405,76.4,16.5,17.9,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T13:00,0.0,0.401,75.7,18.0,18.6,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T14:00,0.0,0.397,74.9,18.2,18.4,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T15:00,0.0,0.394,74.3,18.6,19.0,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T16:00,0.0,0.39,73.6,19.4,12.8,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T17:00,0.0,0.389,73.4,18.8,10.8,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T18:00,0.3,0.391,73.8,18.4,9.9,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T19:00,0.3,0.394,74.3,17.7,4.9,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T20:00,0.0,0.395,74.5,15.9,7.9,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T21:00,0.0,0.395,74.5,14.6,7.5,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T22:00,0.0,0.395,74.5,13.5,7.7,True
+tratayen_sur,Tratayén / Sector Sur,2026-10-26T23:00,0.0,0.395,74.5,12.9,9.0,True
